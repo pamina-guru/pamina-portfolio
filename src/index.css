@@ -14,3 +14,12 @@ body {
 .logo-font {
   font-family: "Playfair Display", serif;
 }
+
+.signature-name {
+  font-family: "Allura", cursive;
+}
+
+.instrument-serif {
+  font-family: "Instrument Serif", serif;
+  font-style: italic;
+}
