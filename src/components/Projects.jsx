@@ -1,3 +1,10 @@
+import urbanroots from "../../images/urbanroots.png";
+import eventPlatform from "../../images/event-platform.jpg";
+import saasProductivity from "../../images/saas-productivity.jpg";
+import movieStreaming from "../../images/movie-streaming.png";
+import travelExplorer from "../../images/travel-explorer.png";
+import traffic from "../../images/traffic.png";
+
 function Projects() {
   const projects = [
     {
@@ -5,7 +12,7 @@ function Projects() {
       description:
         "A smart urban gardening mobile app that enables plant tracking, IoT integration, and AI-based recommendations for sustainable home gardening.",
       tech: ["Flutter", "Next.js", "PostgreSQL", "TensorFlow"],
-      image: "/projects/urbanroots.png",
+      image: urbanroots,
       github: "#",
     },
     {
@@ -13,7 +20,7 @@ function Projects() {
       description:
         "A full-stack event platform where users can browse and register for events while administrators securely manage listings using REST APIs.",
       tech: ["React", "Node.js", "PostgreSQL", "Prisma"],
-      image: "/projects/event-platform.png",
+      image: eventPlatform,
       github: "#",
     },
     {
@@ -21,7 +28,7 @@ function Projects() {
       description:
         "A full-stack productivity system featuring authentication, task management, and dashboards for efficient workflow tracking.",
       tech: ["React", "Node.js", "PostgreSQL", "Prisma"],
-      image: "/projects/saas-productivity.png",
+      image: saasProductivity,
       github: "#",
     },
     {
@@ -29,7 +36,7 @@ function Projects() {
       description:
         "A Netflix-style movie platform with authentication, dynamic browsing, and integrated trailer playback in a responsive UI.",
       tech: ["React", "Firebase", "Tailwind", "REST API"],
-      image: "/projects/movie-streaming.png",
+      image: movieStreaming,
       github: "#",
     },
     {
@@ -37,7 +44,7 @@ function Projects() {
       description:
         "A responsive travel discovery app that allows users to explore destinations through dynamic search and detailed API-driven pages.",
       tech: ["React", "Tailwind", "REST API"],
-      image: "/projects/travel-explorer.png",
+      image: travelExplorer,
       github: "#",
     },
     {
@@ -45,7 +52,7 @@ function Projects() {
       description:
         "A Python application that analyzes traffic datasets and generates vehicle statistics with Tkinter-based histogram visualizations.",
       tech: ["Python", "Tkinter", "Data Analysis"],
-      image: "/projects/traffic-analysis.png",
+      image: traffic,
       github: "#",
     },
   ];
