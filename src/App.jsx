@@ -11,16 +11,19 @@ import DynamicBackground from "./components/DynamicBackground";
 
 function App() {
   return (
-    <div className="animated-site-bg relative min-h-screen overflow-x-hidden text-white">
-      <Navbar />
+    <div className="relative min-h-screen overflow-x-hidden text-white">
       <DynamicBackground />
-      <Hero />
-      <About />
-      <Projects />
-      <Education />
-      <Skills />
-      <Contact />
-      <Footer />
+
+      <div className="relative z-10">
+        <Navbar />
+        <Hero />
+        <About />
+        <Projects />
+        <Education />
+        <Skills />
+        <Contact />
+        <Footer />
+      </div>
     </div>
   );
 }
