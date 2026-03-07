@@ -3,9 +3,12 @@ function Navbar() {
     <nav className="sticky top-0 z-50 bg-black/70 backdrop-blur-md border-b border-white/10">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* LOGO */}
-        <h1 className="logo-font text-3xl tracking-wide text-[#d11468] hover:scale-105 transition duration-300 cursor-pointer">
+        <a
+          href="#home"
+          className="text-3xl text-white allura-font tracking-wide"
+        >
           Pamina
-        </h1>
+        </a>
 
         {/* NAV LINKS */}
         <div className="hidden md:flex items-center gap-8 text-sm font-medium">
