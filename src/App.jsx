@@ -7,11 +7,13 @@ import Education from "./components/Education";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import DynamicBackground from "./components/DynamicBackground";
 
 function App() {
   return (
-    <div className="bg-black text-white min-h-screen">
+    <div className="animated-site-bg relative min-h-screen overflow-x-hidden text-white">
       <Navbar />
+      <DynamicBackground />
       <Hero />
       <About />
       <Projects />

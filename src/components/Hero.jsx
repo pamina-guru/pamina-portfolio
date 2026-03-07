@@ -1,6 +1,6 @@
 function Hero() {
   return (
-    <section className="min-h-screen flex items-center bg-black text-white px-8">
+    <section className="min-h-screen flex items-center px-8 text-white">
       <div className="max-w-4xl">
         {/* Name */}
         <h1 className="signature-name text-7xl md:text-8xl text-white">

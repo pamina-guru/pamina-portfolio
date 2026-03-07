@@ -2,7 +2,7 @@ function Contact() {
   return (
     <section
       id="contact"
-      className="relative bg-black px-6 py-24 text-white overflow-hidden"
+      className="relative px-6 py-24 text-white overflow-hidden"
     >
       {/* background glow */}
       <div className="pointer-events-none absolute inset-0">

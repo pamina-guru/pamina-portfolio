@@ -52,7 +52,7 @@ function Skills() {
   return (
     <section
       id="skills"
-      className="relative overflow-hidden bg-black px-6 py-24 text-white"
+      className="relative overflow-hidden px-6 py-24 text-white"
     >
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-[-100px] top-10 h-72 w-72 rounded-full bg-[#8D0240]/18 blur-[130px]" />

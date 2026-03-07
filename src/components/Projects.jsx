@@ -58,7 +58,7 @@ function Projects() {
   ];
 
   return (
-    <section id="projects" className="relative bg-black px-6 py-24 text-white">
+    <section id="projects" className="relative px-6 py-24 text-white">
       <div className="mx-auto max-w-6xl">
         {/* Heading */}
         <div className="mb-20 text-center">

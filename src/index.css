@@ -27,3 +27,344 @@ body {
 .allura-font {
   font-family: "Allura", cursive;
 }
+
+@keyframes floatOne {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(60px, 40px) scale(1.08);
+  }
+}
+
+@keyframes floatTwo {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-50px, 60px) scale(1.06);
+  }
+}
+
+@keyframes floatThree {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(40px, -40px) scale(1.1);
+  }
+}
+
+@keyframes gridMove {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(60px);
+  }
+}
+
+@keyframes blob1 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(90px, 50px) scale(1.12);
+  }
+}
+
+@keyframes blob2 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-70px, 80px) scale(1.08);
+  }
+}
+
+@keyframes blob3 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(60px, -60px) scale(1.1);
+  }
+}
+
+.animate-blob1 {
+  animation: blob1 14s ease-in-out infinite;
+}
+
+.animate-blob2 {
+  animation: blob2 18s ease-in-out infinite;
+}
+
+.animate-blob3 {
+  animation: blob3 16s ease-in-out infinite;
+}
+
+.moving-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridShift 18s linear infinite;
+}
+
+@keyframes gridShift {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(60px);
+  }
+}
+
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #000;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.allura-font {
+  font-family: "Allura", cursive;
+}
+
+.instrument-serif {
+  font-family: "Instrument Serif", serif;
+  font-style: italic;
+}
+
+/* MAIN ANIMATED BACKGROUND */
+.animated-site-bg {
+  position: relative;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(141, 2, 64, 0.18), transparent 28%),
+    radial-gradient(circle at 80% 25%, rgba(177, 3, 82, 0.16), transparent 30%),
+    radial-gradient(
+      circle at 50% 80%,
+      rgba(209, 20, 104, 0.12),
+      transparent 26%
+    ),
+    #000000;
+  isolation: isolate;
+}
+
+.animated-site-bg::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(circle at 15% 25%, rgba(141, 2, 64, 0.28), transparent 22%),
+    radial-gradient(circle at 85% 30%, rgba(177, 3, 82, 0.24), transparent 24%),
+    radial-gradient(
+      circle at 50% 85%,
+      rgba(209, 20, 104, 0.18),
+      transparent 20%
+    );
+  filter: blur(40px);
+  animation: blobMove 16s ease-in-out infinite alternate;
+}
+
+.animated-site-bg::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.18;
+  animation: gridMove 18s linear infinite;
+}
+
+@keyframes blobMove {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(30px, -20px, 0) scale(1.08);
+  }
+  100% {
+    transform: translate3d(-25px, 35px, 0) scale(1.04);
+  }
+}
+
+@keyframes gridMove {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(60px);
+  }
+}
+
+/* BLOBS */
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.5;
+}
+
+.blob1 {
+  width: 500px;
+  height: 500px;
+  background: #8d0240;
+  top: 10%;
+  left: -100px;
+  animation: blobMove1 18s infinite alternate ease-in-out;
+}
+
+.blob2 {
+  width: 450px;
+  height: 450px;
+  background: #b10352;
+  top: 40%;
+  right: -120px;
+  animation: blobMove2 22s infinite alternate ease-in-out;
+}
+
+.blob3 {
+  width: 400px;
+  height: 400px;
+  background: #d11468;
+  bottom: -120px;
+  left: 35%;
+  animation: blobMove3 20s infinite alternate ease-in-out;
+}
+
+/* Animations */
+
+@keyframes blobMove1 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(120px, 80px) scale(1.2);
+  }
+}
+
+@keyframes blobMove2 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(-120px, 60px) scale(1.15);
+  }
+}
+
+@keyframes blobMove3 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(80px, -100px) scale(1.25);
+  }
+}
+
+.liquid-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(110px);
+  opacity: 0.2;
+  mix-blend-mode: screen;
+}
+
+.blob-dark {
+  width: 420px;
+  height: 420px;
+  left: -80px;
+  top: 10%;
+  background: rgba(90, 0, 35, 0.9);
+  animation: floatBlobOne 18s ease-in-out infinite alternate;
+}
+
+.blob-murrey {
+  width: 360px;
+  height: 360px;
+  right: -60px;
+  top: 28%;
+  background: rgba(141, 2, 64, 0.75);
+  animation: floatBlobTwo 22s ease-in-out infinite alternate;
+}
+
+.blob-light {
+  width: 300px;
+  height: 300px;
+  left: 35%;
+  bottom: -60px;
+  background: rgba(255, 255, 255, 0.08);
+  animation: floatBlobThree 20s ease-in-out infinite alternate;
+}
+
+.subtle-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 64px 64px;
+  opacity: 0.14;
+  animation: gridDrift 24s linear infinite;
+}
+
+@keyframes floatBlobOne {
+  0% {
+    transform: translate(0, 0) scale(1);
+    border-radius: 42% 58% 55% 45% / 44% 42% 58% 56%;
+  }
+  100% {
+    transform: translate(90px, 70px) scale(1.12);
+    border-radius: 58% 42% 48% 52% / 38% 57% 43% 62%;
+  }
+}
+
+@keyframes floatBlobTwo {
+  0% {
+    transform: translate(0, 0) scale(1);
+    border-radius: 55% 45% 52% 48% / 50% 42% 58% 50%;
+  }
+  100% {
+    transform: translate(-80px, 60px) scale(1.08);
+    border-radius: 43% 57% 45% 55% / 60% 45% 55% 40%;
+  }
+}
+
+@keyframes floatBlobThree {
+  0% {
+    transform: translate(0, 0) scale(1);
+    border-radius: 48% 52% 60% 40% / 45% 55% 45% 55%;
+  }
+  100% {
+    transform: translate(60px, -80px) scale(1.15);
+    border-radius: 60% 40% 46% 54% / 52% 44% 56% 48%;
+  }
+}
+
+@keyframes gridDrift {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(64px);
+  }
+}
