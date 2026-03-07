@@ -1,4 +1,4 @@
-import urbanroots from "../../images/urbanroots.png";
+import urbanroots from "../../images/UrbanRoots.png";
 import eventPlatform from "../../images/event-platform.jpg";
 import saasProductivity from "../../images/saas-productivity.jpg";
 import movieStreaming from "../../images/movie-streaming.png";
