@@ -4,6 +4,7 @@ import saasProductivity from "../../images/saas-productivity.jpg";
 import movieStreaming from "../../images/movie-streaming.png";
 import travelExplorer from "../../images/travel-explorer.png";
 import traffic from "../../images/traffic.png";
+import LetterReveal from "./LetterReveal";
 
 function Projects() {
   const projects = [
@@ -61,14 +62,14 @@ function Projects() {
     <section id="projects" className="relative px-6 py-24 text-white">
       <div className="mx-auto max-w-6xl">
         <div className="mb-20 text-center">
-          <p className="section-kicker mb-4 text-xs uppercase tracking-[0.35em] text-white/60">
+          <p className="mb-4 text-xs uppercase tracking-[0.35em] text-white/60">
             PORTFOLIO
           </p>
 
-          <h2 className="section-heading section-heading-glow text-4xl font-bold sm:text-5xl md:text-6xl">
-            <span className="text-white">Featured </span>
+          <h2 className="text-4xl font-bold sm:text-5xl md:text-6xl section-heading-glow">
+            <LetterReveal text="Featured " />
             <span className="instrument-serif bg-gradient-to-r from-[#8D0240] via-[#d11468] to-[#f3b2cc] bg-clip-text text-transparent">
-              Creations
+              <LetterReveal text="Creations" delay={0.3} noBlur />
             </span>
           </h2>
         </div>

@@ -24,6 +24,8 @@ import {
   SiFlutter,
 } from "react-icons/si";
 
+import LetterReveal from "./LetterReveal";
+
 function Skills() {
   const skills = [
     { name: "Java", icon: <FaJava /> },
@@ -65,10 +67,10 @@ function Skills() {
           MY SKILLSET
         </p>
 
-        <h2 className="text-4xl font-bold leading-tight sm:text-5xl md:text-6xl">
-          <span className="text-white">Tools & </span>
-          <span className="instrument-serif bg-gradient-to-r from-[#8D0240] via-[#d11468] to-[#f3b2cc] bg-clip-text text-transparent text-6xl">
-            Technologies
+        <h2 className="text-4xl font-bold leading-tight sm:text-5xl md:text-6xl section-heading-glow">
+          <LetterReveal text="Tools & " />
+          <span className="instrument-serif bg-gradient-to-r from-[#8D0240] via-[#d11468] to-[#f3b2cc] bg-clip-text text-transparent">
+            <LetterReveal text="Technologies" delay={0.28} noBlur />
           </span>
         </h2>
 
