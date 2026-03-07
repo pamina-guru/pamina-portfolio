@@ -13,14 +13,18 @@ function Contact() {
       <div className="relative z-10 mx-auto max-w-6xl grid gap-16 md:grid-cols-2 items-start">
         {/* LEFT SIDE */}
         <div>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
-            <span className="bg-gradient-to-r from-[#d11468] via-[#f3b2cc] to-white bg-clip-text text-transparent">
-              GET IN
-            </span>{" "}
-            <span className="logo-font italic text-white">TOUCH</span>
-          </h2>
+          {/* small label */}
+          <p className="mb-4 text-xs font-medium uppercase tracking-[0.35em] text-white/60">
+            LET'S CONNECT
+          </p>
 
-          <div className="mt-4 h-1 w-24 rounded-full bg-gradient-to-r from-[#8D0240] via-[#d11468] to-[#f3b2cc] shadow-[0_0_20px_rgba(209,20,104,0.45)]"></div>
+          {/* heading */}
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
+            <span className="text-white">Get in </span>
+            <span className="instrument-serif bg-gradient-to-r from-[#8D0240] via-[#d11468] to-[#f3b2cc] bg-clip-text text-transparent">
+              Touch
+            </span>
+          </h2>
 
           <p className="mt-8 max-w-md text-lg leading-8 text-white/65">
             Feel free to reach out for internships, collaborations, projects or
