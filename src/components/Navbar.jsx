@@ -1,8 +1,7 @@
 function Navbar() {
   return (
-    <nav className="sticky top-0 z-50 bg-black/70 backdrop-blur-md border-b border-white/10">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* LOGO */}
+    <nav className="sticky top-0 z-50 border-b border-white/10 bg-black/20 backdrop-blur-xl">
+      <div className="w-full pl-8 pr-10 py-4 flex items-center justify-between">
         <a
           href="#home"
           className="text-3xl text-white allura-font tracking-wide"
@@ -10,7 +9,6 @@ function Navbar() {
           Pamina
         </a>
 
-        {/* NAV LINKS */}
         <div className="hidden md:flex items-center gap-8 text-sm font-medium">
           <a href="#about" className="hover:text-[#d11468] transition">
             About
@@ -32,7 +30,6 @@ function Navbar() {
             Contact
           </a>
 
-          {/* DOWNLOAD CV BUTTON */}
           <a
             href="/Pamina-Guruparan-CV.pdf"
             download

@@ -60,13 +60,12 @@ function Projects() {
   return (
     <section id="projects" className="relative px-6 py-24 text-white">
       <div className="mx-auto max-w-6xl">
-        {/* Heading */}
         <div className="mb-20 text-center">
-          <p className="mb-4 text-xs uppercase tracking-[0.35em] text-white/60">
+          <p className="section-kicker mb-4 text-xs uppercase tracking-[0.35em] text-white/60">
             PORTFOLIO
           </p>
 
-          <h2 className="text-4xl font-bold sm:text-5xl md:text-6xl">
+          <h2 className="section-heading section-heading-glow text-4xl font-bold sm:text-5xl md:text-6xl">
             <span className="text-white">Featured </span>
             <span className="instrument-serif bg-gradient-to-r from-[#8D0240] via-[#d11468] to-[#f3b2cc] bg-clip-text text-transparent">
               Creations
@@ -74,14 +73,12 @@ function Projects() {
           </h2>
         </div>
 
-        {/* Projects grid */}
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
             <div
               key={index}
               className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-lg transition duration-300 hover:-translate-y-2 hover:border-[#d11468]/40 hover:shadow-[0_0_30px_rgba(141,2,64,0.25)]"
             >
-              {/* Image */}
               <div className="overflow-hidden border-b border-white/10">
                 <img
                   src={project.image}
@@ -90,7 +87,6 @@ function Projects() {
                 />
               </div>
 
-              {/* Content */}
               <div className="p-6">
                 <h3 className="mb-3 text-xl font-semibold">{project.title}</h3>
 
@@ -98,7 +94,6 @@ function Projects() {
                   {project.description}
                 </p>
 
-                {/* Tech stack */}
                 <div className="mb-6 flex flex-wrap gap-2">
                   {project.tech.map((tech, i) => (
                     <span
@@ -110,7 +105,6 @@ function Projects() {
                   ))}
                 </div>
 
-                {/* View button */}
                 <a
                   href={project.github}
                   target="_blank"

@@ -15,25 +15,20 @@ body {
   color: white;
   font-family: "Inter", sans-serif;
   background:
+    radial-gradient(circle at 15% 20%, rgba(150, 25, 80, 0.2), transparent 30%),
     radial-gradient(
-      circle at top left,
-      rgba(141, 2, 64, 0.12),
-      transparent 40%
+      circle at 85% 30%,
+      rgba(130, 20, 70, 0.16),
+      transparent 34%
     ),
-    radial-gradient(
-      circle at bottom right,
-      rgba(141, 2, 64, 0.1),
-      transparent 40%
-    ),
-    linear-gradient(135deg, #000000 0%, #050203 50%, #0a0306 100%);
+    radial-gradient(circle at 50% 85%, rgba(90, 8, 45, 0.14), transparent 28%),
+    linear-gradient(135deg, #000000 0%, #050203 38%, #0a0306 68%, #10040a 100%);
   overflow-x: hidden;
 }
 
 * {
   box-sizing: border-box;
 }
-
-/* ---------- Fonts ---------- */
 
 .logo-font {
   font-family: "Playfair Display", serif;
@@ -52,120 +47,224 @@ body {
   font-family: "Allura", cursive;
 }
 
-/* ---------- Dynamic Liquid Blobs ---------- */
+/* ===== Animated background ===== */
+
+.blob-orbit {
+  position: absolute;
+  will-change: transform;
+}
 
 .liquid {
-  position: absolute;
-  border-radius: 9999px;
-  filter: blur(90px);
-  opacity: 0.55;
-  will-change: transform, border-radius;
+  position: relative;
+  border-radius: 42% 58% 63% 37% / 38% 42% 58% 62%;
+  filter: blur(70px);
+  opacity: 1;
   pointer-events: none;
+  will-change: border-radius, transform;
+  mix-blend-mode: screen;
 }
 
 .liquid-one {
   width: 34rem;
   height: 34rem;
-  left: -8rem;
-  top: -4rem;
   background: radial-gradient(
     circle at 30% 30%,
-    rgba(141, 2, 64, 0.55) 0%,
-    rgba(141, 2, 64, 0.25) 35%,
-    rgba(20, 0, 10, 0.02) 70%,
-    transparent 100%
+    rgba(255, 160, 220, 0.28) 0%,
+    rgba(255, 90, 170, 0.24) 18%,
+    rgba(190, 30, 100, 0.24) 38%,
+    rgba(120, 8, 55, 0.18) 58%,
+    rgba(0, 0, 0, 0) 76%
   );
-  animation: liquidFloatOne 16s ease-in-out infinite alternate;
+  animation: blobMorphOne 11s ease-in-out infinite alternate;
 }
 
 .liquid-two {
   width: 30rem;
   height: 30rem;
-  right: -7rem;
-  top: 18%;
   background: radial-gradient(
-    circle at 40% 40%,
-    rgba(160, 40, 90, 0.35) 0%,
-    rgba(141, 2, 64, 0.25) 35%,
-    rgba(15, 0, 8, 0.02) 72%,
-    transparent 100%
+    circle at 45% 45%,
+    rgba(255, 170, 220, 0.18) 0%,
+    rgba(220, 60, 130, 0.2) 24%,
+    rgba(160, 22, 82, 0.2) 46%,
+    rgba(110, 8, 48, 0.16) 62%,
+    rgba(0, 0, 0, 0) 78%
   );
-  animation: liquidFloatTwo 18s ease-in-out infinite alternate;
+  animation: blobMorphTwo 13s ease-in-out infinite alternate;
 }
 
 .liquid-three {
-  width: 28rem;
-  height: 28rem;
-  left: 32%;
-  bottom: -8rem;
+  width: 26rem;
+  height: 26rem;
   background: radial-gradient(
     circle at 50% 50%,
-    rgba(255, 255, 255, 0.06) 0%,
-    rgba(141, 2, 64, 0.15) 45%,
+    rgba(255, 255, 255, 0.14) 0%,
+    rgba(255, 150, 210, 0.12) 18%,
+    rgba(220, 60, 130, 0.12) 36%,
+    rgba(120, 8, 55, 0.12) 54%,
     rgba(0, 0, 0, 0) 75%
   );
-  animation: liquidFloatThree 20s ease-in-out infinite alternate;
+  animation: blobMorphThree 15s ease-in-out infinite alternate;
 }
-
-/* ---------- Grid Layer ---------- */
 
 .liquid-grid {
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
   background-size: 64px 64px;
-  opacity: 0.16;
-  animation: liquidGridShift 20s linear infinite;
+  opacity: 0.14;
+  animation: gridShift 18s linear infinite;
 }
 
-/* ---------- Animations ---------- */
+.noise-layer {
+  opacity: 0.035;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.08) 0.8px,
+    transparent 0.8px
+  );
+  background-size: 8px 8px;
+  mix-blend-mode: soft-light;
+}
 
-@keyframes liquidFloatOne {
+/* ===== Hero animations ===== */
+
+.hero-name {
+  opacity: 0;
+  transform: translateY(36px) scale(0.98);
+  animation:
+    heroNameReveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards,
+    heroNameFloat 5.5s ease-in-out 1.3s infinite;
+  text-shadow:
+    0 0 18px rgba(255, 255, 255, 0.08),
+    0 0 30px rgba(209, 20, 104, 0.12);
+}
+
+.hero-subtitle {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: fadeSlideUp 0.9s ease forwards;
+  animation-delay: 0.35s;
+}
+
+.hero-bio {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideUp 0.95s ease forwards;
+  animation-delay: 0.55s;
+}
+
+.hero-actions {
+  opacity: 0;
+  transform: translateY(22px);
+  animation: fadeSlideUp 1s ease forwards;
+  animation-delay: 0.75s;
+}
+
+/* ===== Section heading animations ===== */
+
+.section-kicker {
+  opacity: 0;
+  transform: translateY(16px);
+  animation: fadeSlideUp 0.8s ease forwards;
+}
+
+.section-heading {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: fadeSlideUp 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.section-heading-glow {
+  text-shadow:
+    0 0 14px rgba(255, 255, 255, 0.06),
+    0 0 24px rgba(209, 20, 104, 0.1);
+}
+
+/* ===== Keyframes ===== */
+
+@keyframes heroNameReveal {
   0% {
-    transform: translate(0, 0) scale(1);
+    opacity: 0;
+    transform: translateY(36px) scale(0.98);
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes heroNameFloat {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+    filter: blur(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes blobMorphOne {
+  0% {
     border-radius: 42% 58% 63% 37% / 38% 42% 58% 62%;
+    transform: scale(1);
   }
   50% {
-    transform: translate(70px, 50px) scale(1.08);
     border-radius: 58% 42% 40% 60% / 55% 44% 56% 45%;
+    transform: scale(1.06);
   }
   100% {
-    transform: translate(100px, 75px) scale(1.14);
     border-radius: 50% 50% 36% 64% / 56% 42% 58% 44%;
+    transform: scale(1.1);
   }
 }
 
-@keyframes liquidFloatTwo {
+@keyframes blobMorphTwo {
   0% {
-    transform: translate(0, 0) scale(1);
     border-radius: 55% 45% 52% 48% / 50% 42% 58% 50%;
+    transform: scale(1);
   }
   50% {
-    transform: translate(-70px, 65px) scale(1.07);
     border-radius: 62% 38% 56% 44% / 44% 58% 42% 56%;
+    transform: scale(1.05);
   }
   100% {
-    transform: translate(-100px, 60px) scale(1.12);
     border-radius: 57% 43% 39% 61% / 48% 55% 45% 52%;
+    transform: scale(1.08);
   }
 }
 
-@keyframes liquidFloatThree {
+@keyframes blobMorphThree {
   0% {
-    transform: translate(0, 0) scale(1);
     border-radius: 48% 52% 60% 40% / 45% 55% 45% 55%;
+    transform: scale(1);
   }
   50% {
-    transform: translate(55px, -65px) scale(1.1);
     border-radius: 38% 62% 50% 50% / 63% 37% 63% 37%;
+    transform: scale(1.05);
   }
   100% {
-    transform: translate(90px, -95px) scale(1.15);
     border-radius: 44% 56% 58% 42% / 55% 45% 55% 45%;
+    transform: scale(1.1);
   }
 }
 
-@keyframes liquidGridShift {
+@keyframes gridShift {
   0% {
     transform: translateY(0);
   }
