@@ -101,38 +101,6 @@ function Hero() {
             </div>
           </div>
         </div>
-
-        <div className="hero-side-social hidden lg:flex">
-          <a
-            href="https://github.com/pamina-guru"
-            target="_blank"
-            rel="noreferrer"
-            className="hero-side-social-btn"
-            aria-label="GitHub"
-          >
-            <FaGithub />
-          </a>
-
-          <a
-            href="https://www.linkedin.com/in/pamina-guruparan"
-            target="_blank"
-            rel="noreferrer"
-            className="hero-side-social-btn"
-            aria-label="LinkedIn"
-          >
-            <FaLinkedinIn />
-          </a>
-
-          <a
-            href="mailto:pamiguru09@gmail.com"
-            className="hero-side-social-btn"
-            aria-label="Email"
-          >
-            <HiOutlineMail />
-          </a>
-
-          <div className="hero-side-line" />
-        </div>
       </div>
     </section>
   );

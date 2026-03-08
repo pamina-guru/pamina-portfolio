@@ -24,7 +24,6 @@ function LetterReveal({
     );
 
     observer.observe(node);
-
     return () => observer.disconnect();
   }, []);
 

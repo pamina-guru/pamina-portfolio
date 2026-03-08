@@ -25,6 +25,7 @@ import {
 } from "react-icons/si";
 
 import LetterReveal from "./LetterReveal";
+import GradientTypeReveal from "./GradientTypeReveal";
 
 function Skills() {
   const skills = [
@@ -52,10 +53,7 @@ function Skills() {
   ];
 
   return (
-    <section
-      id="skills"
-      className="relative overflow-hidden px-6 py-24 text-white"
-    >
+    <section id="skills" className="relative px-6 py-24 text-white">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-[-100px] top-10 h-72 w-72 rounded-full bg-[#8D0240]/18 blur-[130px]" />
         <div className="absolute right-[-80px] top-32 h-80 w-80 rounded-full bg-[#b10352]/12 blur-[150px]" />
@@ -67,10 +65,14 @@ function Skills() {
           MY SKILLSET
         </p>
 
-        <h2 className="text-4xl font-bold leading-tight sm:text-5xl md:text-6xl section-heading-glow">
+        <h2 className="section-heading-glow overflow-visible pb-5 text-4xl font-bold leading-[1.2] sm:text-5xl md:text-6xl">
           <LetterReveal text="Tools & " />
-          <span className="instrument-serif bg-gradient-to-r from-[#8D0240] via-[#d11468] to-[#f3b2cc] bg-clip-text text-transparent">
-            <LetterReveal text="Technologies" delay={0.28} noBlur />
+          <span className="instrument-serif">
+            <GradientTypeReveal
+              text="Technologies"
+              delay={0.25}
+              speed={0.042}
+            />
           </span>
         </h2>
 

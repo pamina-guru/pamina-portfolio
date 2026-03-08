@@ -8,11 +8,13 @@ import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import DynamicBackground from "./components/DynamicBackground";
+import FixedSocialBar from "./components/FixedSocialBar";
 
 function App() {
   return (
     <div className="relative min-h-screen overflow-x-hidden text-white">
       <DynamicBackground />
+      <FixedSocialBar />
 
       <div className="relative z-10">
         <Navbar />

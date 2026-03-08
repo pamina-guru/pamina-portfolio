@@ -5,6 +5,7 @@ import movieStreaming from "../../images/movie-streaming.png";
 import travelExplorer from "../../images/travel-explorer.png";
 import traffic from "../../images/traffic.png";
 import LetterReveal from "./LetterReveal";
+import GradientTypeReveal from "./GradientTypeReveal";
 
 function Projects() {
   const projects = [
@@ -66,10 +67,10 @@ function Projects() {
             PORTFOLIO
           </p>
 
-          <h2 className="text-4xl font-bold sm:text-5xl md:text-6xl section-heading-glow">
+          <h2 className="section-heading-glow overflow-visible pb-5 text-4xl font-bold leading-[1.2] sm:text-5xl md:text-6xl">
             <LetterReveal text="Featured " />
-            <span className="instrument-serif bg-gradient-to-r from-[#8D0240] via-[#d11468] to-[#f3b2cc] bg-clip-text text-transparent">
-              <LetterReveal text="Creations" delay={0.3} noBlur />
+            <span className="instrument-serif">
+              <GradientTypeReveal text="Creations" delay={0.25} speed={0.045} />
             </span>
           </h2>
         </div>

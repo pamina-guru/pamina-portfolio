@@ -1,26 +1,24 @@
 import LetterReveal from "./LetterReveal";
+import GradientTypeReveal from "./GradientTypeReveal";
 
 function Contact() {
   return (
-    <section
-      id="contact"
-      className="relative px-6 py-24 text-white overflow-hidden"
-    >
+    <section id="contact" className="relative px-6 py-24 text-white">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute top-20 left-[-80px] h-72 w-72 rounded-full bg-[#8D0240]/20 blur-[130px]" />
         <div className="absolute bottom-10 right-[-60px] h-80 w-80 rounded-full bg-[#b10352]/15 blur-[150px]" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-6xl grid gap-16 md:grid-cols-2 items-start">
+      <div className="relative z-10 mx-auto max-w-6xl grid items-start gap-16 md:grid-cols-2">
         <div>
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.35em] text-white/60">
             LET&apos;S CONNECT
           </p>
 
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight section-heading-glow">
+          <h2 className="section-heading-glow overflow-visible pb-5 text-4xl font-bold leading-[1.2] sm:text-5xl md:text-6xl">
             <LetterReveal text="Get in " />
-            <span className="instrument-serif bg-gradient-to-r from-[#8D0240] via-[#d11468] to-[#f3b2cc] bg-clip-text text-transparent">
-              <LetterReveal text="Touch" delay={0.2} />
+            <span className="instrument-serif">
+              <GradientTypeReveal text="Touch" delay={0.2} speed={0.05} />
             </span>
           </h2>
 
@@ -64,7 +62,7 @@ function Contact() {
           </div>
         </div>
 
-        <form className="rounded-[2rem] border border-[#d11468]/20 bg-white/[0.04] p-6 shadow-[0_0_35px_rgba(141,2,64,0.12)] backdrop-blur-xl md:p-8 space-y-6">
+        <form className="space-y-6 rounded-[2rem] border border-[#d11468]/20 bg-white/[0.04] p-6 shadow-[0_0_35px_rgba(141,2,64,0.12)] backdrop-blur-xl md:p-8">
           <input
             type="text"
             placeholder="Name"
