@@ -6,6 +6,7 @@ import travelExplorer from "../../images/travel-explorer.png";
 import traffic from "../../images/traffic.png";
 import LetterReveal from "./LetterReveal";
 import GradientTypeReveal from "./GradientTypeReveal";
+import ScrollReveal from "./ScrollReveal";
 
 function Projects() {
   const projects = [
@@ -60,8 +61,11 @@ function Projects() {
   ];
 
   return (
-    <section id="projects" className="relative px-6 py-24 text-white">
-      <div className="mx-auto max-w-6xl">
+    <section
+      id="projects"
+      className="relative scroll-mt-32 px-6 py-24 text-white"
+    >
+      <ScrollReveal className="mx-auto max-w-6xl">
         <div className="mb-20 text-center">
           <p className="mb-4 text-xs uppercase tracking-[0.35em] text-white/60">
             PORTFOLIO
@@ -119,7 +123,7 @@ function Projects() {
             </div>
           ))}
         </div>
-      </div>
+      </ScrollReveal>
     </section>
   );
 }

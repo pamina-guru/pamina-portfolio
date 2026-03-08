@@ -26,6 +26,7 @@ import {
 
 import LetterReveal from "./LetterReveal";
 import GradientTypeReveal from "./GradientTypeReveal";
+import ScrollReveal from "./ScrollReveal";
 
 function Skills() {
   const skills = [
@@ -53,14 +54,17 @@ function Skills() {
   ];
 
   return (
-    <section id="skills" className="relative px-6 py-24 text-white">
+    <section
+      id="skills"
+      className="relative scroll-mt-32 px-6 py-24 text-white"
+    >
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-[-100px] top-10 h-72 w-72 rounded-full bg-[#8D0240]/18 blur-[130px]" />
         <div className="absolute right-[-80px] top-32 h-80 w-80 rounded-full bg-[#b10352]/12 blur-[150px]" />
         <div className="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#d11468]/8 blur-[120px]" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-6xl text-center">
+      <ScrollReveal className="relative z-10 mx-auto max-w-6xl text-center">
         <p className="mb-4 text-xs font-medium uppercase tracking-[0.35em] text-white/60">
           MY SKILLSET
         </p>
@@ -89,7 +93,7 @@ function Skills() {
             </div>
           ))}
         </div>
-      </div>
+      </ScrollReveal>
     </section>
   );
 }

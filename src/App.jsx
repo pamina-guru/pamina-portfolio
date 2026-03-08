@@ -9,11 +9,15 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import DynamicBackground from "./components/DynamicBackground";
 import FixedSocialBar from "./components/FixedSocialBar";
+import ScrollProgress from "./components/ScrollProgress";
+import CursorGlow from "./components/CursorGlow";
 
 function App() {
   return (
     <div className="relative min-h-screen overflow-x-hidden text-white">
       <DynamicBackground />
+      <CursorGlow />
+      <ScrollProgress />
       <FixedSocialBar />
 
       <div className="relative z-10">

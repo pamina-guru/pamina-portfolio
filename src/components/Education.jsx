@@ -1,10 +1,14 @@
 import LetterReveal from "./LetterReveal";
 import GradientTypeReveal from "./GradientTypeReveal";
+import ScrollReveal from "./ScrollReveal";
 
 function Education() {
   return (
-    <section id="education" className="relative px-6 py-24 text-white">
-      <div className="mx-auto max-w-6xl">
+    <section
+      id="education"
+      className="relative scroll-mt-32 px-6 py-24 text-white"
+    >
+      <ScrollReveal className="mx-auto max-w-6xl">
         <div className="mb-16 text-center">
           <p className="mb-4 text-xs uppercase tracking-[0.35em] text-white/60">
             EDUCATION
@@ -34,7 +38,7 @@ function Education() {
             personal portfolio projects.
           </p>
         </div>
-      </div>
+      </ScrollReveal>
     </section>
   );
 }

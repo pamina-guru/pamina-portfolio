@@ -1,10 +1,11 @@
 import LetterReveal from "./LetterReveal";
 import GradientTypeReveal from "./GradientTypeReveal";
+import ScrollReveal from "./ScrollReveal";
 
 function About() {
   return (
-    <section id="about" className="relative px-6 py-24 text-white">
-      <div className="mx-auto max-w-6xl">
+    <section id="about" className="relative scroll-mt-32 px-6 py-24 text-white">
+      <ScrollReveal className="mx-auto max-w-6xl">
         <div className="mb-16 text-center">
           <p className="mb-4 text-xs uppercase tracking-[0.35em] text-white/60">
             ABOUT
@@ -26,7 +27,7 @@ function About() {
           while continuously learning modern technologies and sharpening my
           skills as a developer and designer.
         </div>
-      </div>
+      </ScrollReveal>
     </section>
   );
 }

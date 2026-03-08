@@ -1,15 +1,19 @@
 import LetterReveal from "./LetterReveal";
 import GradientTypeReveal from "./GradientTypeReveal";
+import ScrollReveal from "./ScrollReveal";
 
 function Contact() {
   return (
-    <section id="contact" className="relative px-6 py-24 text-white">
+    <section
+      id="contact"
+      className="relative scroll-mt-32 px-6 py-24 text-white"
+    >
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute top-20 left-[-80px] h-72 w-72 rounded-full bg-[#8D0240]/20 blur-[130px]" />
         <div className="absolute bottom-10 right-[-60px] h-80 w-80 rounded-full bg-[#b10352]/15 blur-[150px]" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-6xl grid items-start gap-16 md:grid-cols-2">
+      <ScrollReveal className="relative z-10 mx-auto grid max-w-6xl items-start gap-16 md:grid-cols-2">
         <div>
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.35em] text-white/60">
             LET&apos;S CONNECT
@@ -106,7 +110,7 @@ function Contact() {
             </a>
           </div>
         </form>
-      </div>
+      </ScrollReveal>
     </section>
   );
 }
