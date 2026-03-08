@@ -7,7 +7,7 @@ function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen overflow-hidden px-6 pt-36 pb-12 text-white md:px-8 md:pt-40"
+      className="relative isolate min-h-screen overflow-hidden px-6 pt-36 pb-12 text-white md:px-8 md:pt-40"
     >
       <HeroParticles />
 
