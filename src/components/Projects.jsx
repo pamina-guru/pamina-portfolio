@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import urbanroots from "../../images/UrbanRoots.png";
 import eventPlatform from "../../images/event-platform.jpg";
 import saasProductivity from "../../images/saas-productivity.jpg";
@@ -60,6 +61,29 @@ function Projects() {
     },
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 80,
+        damping: 15,
+      },
+    },
+  };
+
   return (
     <section
       id="projects"
@@ -79,17 +103,25 @@ function Projects() {
           </h2>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
+        >
           {projects.map((project, index) => (
-            <div
+            <motion.div
               key={index}
-              className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-lg transition duration-300 hover:-translate-y-2 hover:border-[#d11468]/40 hover:shadow-[0_0_30px_rgba(141,2,64,0.25)]"
+              variants={cardVariants}
+              whileHover={{ y: -8, scale: 1.02 }}
+              className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl transition-colors duration-300 hover:border-[#DA70D6]/40 hover:bg-white/[0.06] hover:shadow-[0_0_40px_rgba(112,25,61,0.35)]"
             >
               <div className="overflow-hidden border-b border-white/10">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="h-60 w-full object-cover transition duration-500 group-hover:scale-[1.04]"
+                  className="h-60 w-full object-cover transition-transform duration-700 group-hover:scale-[1.08]"
                 />
               </div>
 
@@ -104,25 +136,27 @@ function Projects() {
                   {project.tech.map((tech, i) => (
                     <span
                       key={i}
-                      className="rounded-full border border-white/10 bg-white/[0.05] px-3 py-1 text-xs text-white/80"
+                      className="rounded-full border border-white/10 bg-white/[0.05] px-3 py-1 text-xs text-white/80 transition-colors group-hover:bg-white/[0.1]"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                <a
+                <motion.a
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                   href={project.github}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-[#8D0240] via-[#b10352] to-[#d11468] px-6 py-2.5 text-sm font-semibold text-white transition duration-300 hover:shadow-[0_0_20px_rgba(177,3,82,0.6)]"
+                  className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-[#70193D] via-[#DA70D6] to-[#C8A2C8] px-6 py-2.5 text-sm font-semibold text-white transition-shadow duration-300 hover:shadow-[0_0_20px_rgba(218,112,214,0.4)]"
                 >
                   View
-                </a>
+                </motion.a>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </ScrollReveal>
     </section>
   );

@@ -26,7 +26,7 @@ function SectionHeading({
         <LetterRevealText
           as="span"
           text={highlightPart}
-          className="instrument-serif bg-gradient-to-r from-[#8D0240] via-[#d11468] to-[#f3b2cc] bg-clip-text text-transparent"
+          className="instrument-serif bg-gradient-to-r from-[#70193D] via-[#DA70D6] to-[#C8A2C8] bg-clip-text text-transparent"
           delay={0.25}
           speed={0.04}
         />

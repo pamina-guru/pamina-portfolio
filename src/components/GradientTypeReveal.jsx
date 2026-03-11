@@ -24,11 +24,11 @@ function mixColor(a, b, t) {
 }
 
 function getGradientColors(length) {
-  const start = hexToRgb("#8D0240");
-  const mid = hexToRgb("#d11468");
-  const end = hexToRgb("#f3b2cc");
+  const start = hexToRgb("#70193D");
+  const mid = hexToRgb("#DA70D6");
+  const end = hexToRgb("#C8A2C8");
 
-  if (length <= 1) return ["#d11468"];
+  if (length <= 1) return ["#DA70D6"];
 
   return Array.from({ length }, (_, i) => {
     const t = i / (length - 1);

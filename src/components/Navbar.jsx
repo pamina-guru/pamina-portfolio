@@ -53,7 +53,7 @@ function Navbar() {
       >
         <a
           href="#home"
-          className="allura-font text-3xl tracking-wide text-white transition duration-300 hover:text-[#ffd8e7]"
+          className="allura-font text-3xl tracking-wide text-white transition duration-300 hover:text-[#C8A2C8]"
         >
           Pamina
         </a>
@@ -81,7 +81,7 @@ function Navbar() {
         <a
           href="/Pamina-Guruparan-CV.pdf"
           download
-          className="rounded-full border border-[#d11468]/70 px-5 py-2 text-sm font-semibold text-[#ffd3e6] transition duration-300 hover:bg-[#8D0240] hover:text-white hover:shadow-[0_0_18px_rgba(209,20,104,0.35)]"
+          className="rounded-full border border-[#DA70D6]/70 px-5 py-2 text-sm font-semibold text-[#C8A2C8] transition duration-300 hover:bg-[#70193D] hover:text-white hover:shadow-[0_0_18px_rgba(218,112,214,0.25)]"
         >
           Download CV
         </a>

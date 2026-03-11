@@ -1,4 +1,6 @@
 import "./App.css";
+import { ReactLenis } from "lenis/react";
+import { AnimatePresence, motion } from "framer-motion";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -14,23 +16,32 @@ import CursorGlow from "./components/CursorGlow";
 
 function App() {
   return (
-    <div className="relative min-h-screen overflow-x-hidden text-white">
-      <DynamicBackground />
-      <CursorGlow />
-      <ScrollProgress />
-      <FixedSocialBar />
+    <ReactLenis root options={{ lerp: 0.05, duration: 1.5, smoothTouch: true }}>
+      <AnimatePresence mode="wait">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="relative min-h-screen overflow-x-hidden text-white"
+        >
+          <DynamicBackground />
+          <CursorGlow />
+          <ScrollProgress />
+          <FixedSocialBar />
 
-      <div className="relative z-10">
-        <Navbar />
-        <Hero />
-        <About />
-        <Projects />
-        <Education />
-        <Skills />
-        <Contact />
-        <Footer />
-      </div>
-    </div>
+          <div className="relative z-10">
+            <Navbar />
+            <Hero />
+            <About />
+            <Projects />
+            <Education />
+            <Skills />
+            <Contact />
+            <Footer />
+          </div>
+        </motion.div>
+      </AnimatePresence>
+    </ReactLenis>
   );
 }
 

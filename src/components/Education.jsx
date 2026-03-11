@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import LetterReveal from "./LetterReveal";
 import GradientTypeReveal from "./GradientTypeReveal";
 import ScrollReveal from "./ScrollReveal";
@@ -22,6 +23,30 @@ function Education() {
     },
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: -30, filter: "blur(5px)" },
+    show: {
+      opacity: 1,
+      x: 0,
+      filter: "blur(0px)",
+      transition: {
+        type: "spring",
+        stiffness: 70,
+        damping: 15,
+      },
+    },
+  };
+
   return (
     <section
       id="education"
@@ -44,16 +69,21 @@ function Education() {
         <div className="education-timeline relative mx-auto max-w-6xl">
           <div className="education-line hidden md:block" />
 
-          <div className="space-y-10">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-100px" }}
+            className="space-y-10"
+          >
             {educationItems.map((item, index) => (
-              <div
+              <motion.div
                 key={index}
-                className={`education-row relative md:grid md:grid-cols-[220px_40px_1fr] md:gap-6 ${
-                  index % 2 === 0 ? "" : ""
-                }`}
+                variants={itemVariants}
+                className={`education-row relative md:grid md:grid-cols-[220px_40px_1fr] md:gap-6`}
               >
                 <div className="hidden md:flex md:items-start md:justify-end md:pt-8">
-                  <span className="rounded-full border border-[#d11468]/30 bg-[#8D0240]/10 px-4 py-2 text-sm font-medium text-[#f3b2cc] backdrop-blur-md">
+                  <span className="rounded-full border border-[#DA70D6]/30 bg-[#70193D]/10 px-4 py-2 text-sm font-medium text-[#C8A2C8] backdrop-blur-md">
                     {item.year}
                   </span>
                 </div>
@@ -62,12 +92,12 @@ function Education() {
                   <div className="education-dot mt-10" />
                 </div>
 
-                <article className="education-card relative overflow-visible rounded-[2rem] border border-white/10 bg-white/[0.04] p-7 shadow-[0_0_35px_rgba(141,2,64,0.10)] backdrop-blur-xl transition duration-500 md:p-9">
-                  <div className="pointer-events-none absolute inset-0 rounded-[2rem] bg-[radial-gradient(circle_at_bottom,rgba(209,20,104,0.08),transparent_45%)] opacity-70" />
+                <article className="education-card relative overflow-visible rounded-[2rem] border border-white/10 bg-white/[0.04] p-7 shadow-[0_0_35px_rgba(112,25,61,0.10)] backdrop-blur-xl transition duration-500 hover:border-[#DA70D6]/40 hover:shadow-[0_0_40px_rgba(112,25,61,0.25)] md:p-9">
+                  <div className="pointer-events-none absolute inset-0 rounded-[2rem] bg-[radial-gradient(circle_at_bottom,rgba(218,112,214,0.08),transparent_45%)] opacity-70" />
 
                   <div className="relative z-10">
                     <div className="mb-4 md:hidden">
-                      <span className="rounded-full border border-[#d11468]/30 bg-[#8D0240]/10 px-4 py-2 text-sm font-medium text-[#f3b2cc] backdrop-blur-md">
+                      <span className="rounded-full border border-[#DA70D6]/30 bg-[#70193D]/10 px-4 py-2 text-sm font-medium text-[#C8A2C8] backdrop-blur-md">
                         {item.year}
                       </span>
                     </div>
@@ -98,9 +128,9 @@ function Education() {
                     </div>
                   </div>
                 </article>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </ScrollReveal>
     </section>

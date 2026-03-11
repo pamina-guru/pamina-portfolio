@@ -40,55 +40,55 @@ function DynamicBackground() {
   return (
     <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
       <div
-        className="blob-orbit absolute left-[-7rem] top-[-4rem]"
+        className="blob-orbit absolute left-[-8rem] top-[-5rem]"
         style={{
-          transform: `translate(${smooth.x * 120}px, ${smooth.y * 100}px)`,
+          transform: `translate(${smooth.x * 120}px, ${smooth.y * 95}px)`,
         }}
       >
         <div className="liquid liquid-one" />
       </div>
 
       <div
-        className="blob-orbit absolute right-[-6rem] top-[12%]"
+        className="blob-orbit absolute right-[-7rem] top-[10%]"
         style={{
-          transform: `translate(${smooth.x * -130}px, ${smooth.y * 95}px)`,
+          transform: `translate(${smooth.x * -135}px, ${smooth.y * 90}px)`,
         }}
       >
         <div className="liquid liquid-two" />
       </div>
 
       <div
-        className="blob-orbit absolute left-[28%] bottom-[-8rem]"
+        className="blob-orbit absolute left-[22%] bottom-[-9rem]"
         style={{
-          transform: `translate(${smooth.x * 85}px, ${smooth.y * -110}px)`,
+          transform: `translate(${smooth.x * 90}px, ${smooth.y * -115}px)`,
         }}
       >
         <div className="liquid liquid-three" />
       </div>
 
       <div
-        className="absolute h-[32rem] w-[32rem] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[140px]"
+        className="absolute h-[34rem] w-[34rem] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[150px]"
         style={{
           left: `${(smooth.x + 0.5) * 100}%`,
           top: `${(smooth.y + 0.5) * 100}%`,
           background:
-            "radial-gradient(circle, rgba(255,255,255,0.16) 0%, rgba(224,70,150,0.18) 22%, rgba(150,20,80,0.16) 42%, rgba(0,0,0,0) 72%)",
+            "radial-gradient(circle, rgba(255,255,255,0.08) 0%, rgba(218,112,214,0.16) 22%, rgba(112,25,61,0.15) 44%, rgba(0,0,0,0) 74%)",
         }}
       />
 
       <div
-        className="absolute h-[24rem] w-[24rem] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[120px]"
+        className="absolute h-[26rem] w-[26rem] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[130px]"
         style={{
           left: `${(-smooth.x * 0.35 + 0.5) * 100}%`,
           top: `${(-smooth.y * 0.35 + 0.5) * 100}%`,
           background:
-            "radial-gradient(circle, rgba(255,255,255,0.06) 0%, rgba(130,20,70,0.12) 38%, rgba(0,0,0,0) 72%)",
+            "radial-gradient(circle, rgba(255,255,255,0.04) 0%, rgba(200,162,200,0.11) 38%, rgba(112,25,61,0.08) 56%, rgba(0,0,0,0) 74%)",
         }}
       />
 
       <div className="liquid-grid absolute inset-0" />
       <div className="noise-layer absolute inset-0" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle,transparent_55%,rgba(0,0,0,0.22)_100%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle,transparent_54%,rgba(0,0,0,0.22)_100%)]" />
     </div>
   );
 }
