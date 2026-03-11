@@ -10,7 +10,6 @@ import {
   FaGitAlt,
   FaGithub,
 } from "react-icons/fa";
-
 import {
   SiJavascript,
   SiTypescript,
@@ -30,103 +29,131 @@ import GradientTypeReveal from "./GradientTypeReveal";
 import ScrollReveal from "./ScrollReveal";
 
 function Skills() {
-  const skills = [
-    { name: "Java", icon: <FaJava /> },
-    { name: "Python", icon: <FaPython /> },
-    { name: "JavaScript", icon: <SiJavascript /> },
-    { name: "TypeScript", icon: <SiTypescript /> },
-    { name: "Dart", icon: <SiDart /> },
-    { name: "HTML", icon: <FaHtml5 /> },
-    { name: "CSS", icon: <FaCss3Alt /> },
-    { name: "Tailwind CSS", icon: <SiTailwindcss /> },
-    { name: "React", icon: <FaReact /> },
-    { name: "Next.js", icon: <SiNextdotjs /> },
-    { name: "Node.js", icon: <FaNodeJs /> },
-    { name: "Express.js", icon: <FaNodeJs /> },
-    { name: "Flutter", icon: <SiFlutter /> },
-    { name: "MySQL", icon: <SiMysql /> },
-    { name: "PostgreSQL", icon: <SiPostgresql /> },
-    { name: "Firebase", icon: <SiFirebase /> },
-    { name: "Figma", icon: <FaFigma /> },
-    { name: "Postman", icon: <SiPostman /> },
-    { name: "Git", icon: <FaGitAlt /> },
-    { name: "GitHub", icon: <FaGithub /> },
-    { name: "Vercel", icon: <SiVercel /> },
+  const categories = [
+    {
+      title: "Frontend",
+      items: [
+        { name: "HTML", icon: <FaHtml5 /> },
+        { name: "CSS", icon: <FaCss3Alt /> },
+        { name: "JavaScript", icon: <SiJavascript /> },
+        { name: "TypeScript", icon: <SiTypescript /> },
+        { name: "React", icon: <FaReact /> },
+        { name: "Next.js", icon: <SiNextdotjs /> },
+        { name: "Tailwind CSS", icon: <SiTailwindcss /> },
+        { name: "Flutter", icon: <SiFlutter /> },
+      ],
+    },
+    {
+      title: "Backend",
+      items: [
+        { name: "Node.js", icon: <FaNodeJs /> },
+        { name: "Express.js", icon: <FaNodeJs /> },
+        { name: "Firebase", icon: <SiFirebase /> },
+        { name: "MySQL", icon: <SiMysql /> },
+        { name: "PostgreSQL", icon: <SiPostgresql /> },
+      ],
+    },
+    {
+      title: "Languages",
+      items: [
+        { name: "Java", icon: <FaJava /> },
+        { name: "Python", icon: <FaPython /> },
+        { name: "Dart", icon: <SiDart /> },
+      ],
+    },
+    {
+      title: "Tools & Dev Workflow",
+      items: [
+        { name: "Git", icon: <FaGitAlt /> },
+        { name: "GitHub", icon: <FaGithub /> },
+        { name: "Figma", icon: <FaFigma /> },
+        { name: "Postman", icon: <SiPostman /> },
+        { name: "Vercel", icon: <SiVercel /> },
+      ],
+    },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.05,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, scale: 0.8, y: 10 },
-    show: {
-      opacity: 1,
-      scale: 1,
-      y: 0,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 10,
-      },
-    },
-  };
-
   return (
-    <section
-      id="skills"
-      className="relative scroll-mt-32 px-6 py-24 text-white"
-    >
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-[-100px] top-10 h-72 w-72 rounded-full bg-[#70193D]/18 blur-[130px]" />
-        <div className="absolute right-[-80px] top-32 h-80 w-80 rounded-full bg-[#DA70D6]/12 blur-[150px]" />
-        <div className="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#C8A2C8]/8 blur-[120px]" />
-      </div>
+    <section id="skills" className="section-shell scroll-mt-32 px-6 py-24">
+      <ScrollReveal className="relative z-10 mx-auto max-w-7xl">
+        <div className="mb-16 text-center">
+          <p className="section-kicker mb-4 text-xs">Capabilities</p>
 
-      <ScrollReveal className="relative z-10 mx-auto max-w-6xl text-center">
-        <p className="mb-4 text-xs font-medium uppercase tracking-[0.35em] text-white/60">
-          MY SKILLSET
-        </p>
+          <h2 className="section-heading-glow overflow-visible pb-5 text-4xl font-bold leading-[1.15] text-slate-50 sm:text-5xl md:text-6xl">
+            <LetterReveal text="Skills & " />
+            <span className="instrument-serif">
+              <GradientTypeReveal
+                text="Technologies"
+                delay={0.22}
+                speed={0.042}
+              />
+            </span>
+          </h2>
 
-        <h2 className="section-heading-glow overflow-visible pb-5 text-4xl font-bold leading-[1.2] sm:text-5xl md:text-6xl">
-          <LetterReveal text="Tools & " />
-          <span className="instrument-serif">
-            <GradientTypeReveal
-              text="Technologies"
-              delay={0.25}
-              speed={0.042}
-            />
-          </span>
-        </h2>
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-400">
+            A growing skillset across design, front-end development, backend
+            fundamentals, and modern development tools.
+          </p>
+        </div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-100px" }}
-          className="mt-14 flex flex-wrap items-center justify-center gap-4"
-        >
-          {skills.map((skill, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              whileHover={{ scale: 1.1, y: -4 }}
-              whileTap={{ scale: 0.95 }}
-              className="group flex cursor-pointer items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-3 text-sm font-medium text-white/85 backdrop-blur-md transition-colors duration-300 hover:border-[#DA70D6]/50 hover:text-white hover:shadow-[0_0_28px_rgba(112,25,61,0.28)]"
+        <div className="grid gap-6 md:grid-cols-2">
+          {categories.map((category, index) => (
+            <ScrollReveal
+              key={category.title}
+              delay={index * 0.08}
+              yOffset={35}
             >
-              <span className="text-lg text-white/75 transition-colors duration-300 group-hover:text-[#C8A2C8]">
-                {skill.icon}
-              </span>
-              <span>{skill.name}</span>
-            </motion.div>
+              <motion.div
+                whileHover={{ y: -4 }}
+                className="section-card rounded-[2rem] p-6"
+              >
+                <h3 className="text-xl font-semibold text-slate-50">
+                  {category.title}
+                </h3>
+
+                <div className="mt-5 flex flex-wrap gap-3">
+                  {category.items.map((skill, i) => (
+                    <motion.div
+                      key={i}
+                      whileHover={{ scale: 1.04 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="group flex items-center gap-3 rounded-2xl border border-slate-700/40 bg-[#0f223d]/75 px-4 py-3 text-sm font-medium text-slate-200 transition duration-300 hover:border-cyan-400/35 hover:text-white"
+                    >
+                      <span className="text-lg text-slate-400 transition duration-300 group-hover:text-cyan-300">
+                        {skill.icon}
+                      </span>
+                      <span>{skill.name}</span>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            </ScrollReveal>
           ))}
-        </motion.div>
+        </div>
+
+        <ScrollReveal delay={0.18} yOffset={35} className="mt-8">
+          <div className="section-card rounded-[2rem] p-6 md:p-8">
+            <h3 className="text-xl font-semibold text-slate-50">
+              Certifications & Highlights
+            </h3>
+
+            <div className="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+              {[
+                "Postman Student Expert",
+                "Student Leadership Experience",
+                "UI/UX and Product Design Growth",
+                "Portfolio-Driven Full-Stack Projects",
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className="rounded-2xl border border-slate-700/40 bg-[#0f223d]/70 p-4 text-sm leading-7 text-slate-300"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+        </ScrollReveal>
       </ScrollReveal>
     </section>
   );

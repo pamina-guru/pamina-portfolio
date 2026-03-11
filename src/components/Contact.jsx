@@ -1,115 +1,118 @@
+import { motion } from "framer-motion";
 import LetterReveal from "./LetterReveal";
 import GradientTypeReveal from "./GradientTypeReveal";
 import ScrollReveal from "./ScrollReveal";
 
 function Contact() {
   return (
-    <section
-      id="contact"
-      className="relative scroll-mt-32 px-6 py-24 text-white"
-    >
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute top-20 left-[-80px] h-72 w-72 rounded-full bg-[#70193D]/20 blur-[130px]" />
-        <div className="absolute bottom-10 right-[-60px] h-80 w-80 rounded-full bg-[#DA70D6]/15 blur-[150px]" />
-      </div>
+    <section id="contact" className="section-shell scroll-mt-32 px-6 py-24">
+      <ScrollReveal className="mx-auto max-w-6xl">
+        <div className="mb-16 text-center">
+          <p className="section-kicker mb-4 text-xs">Let&apos;s Connect</p>
 
-      <ScrollReveal className="relative z-10 mx-auto grid max-w-6xl items-start gap-16 md:grid-cols-2">
-        <div>
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.35em] text-white/60">
-            LET&apos;S CONNECT
-          </p>
-
-          <h2 className="section-heading-glow overflow-visible pb-5 text-4xl font-bold leading-[1.2] sm:text-5xl md:text-6xl">
+          <h2 className="section-heading-glow overflow-visible pb-5 text-4xl font-bold leading-[1.15] text-slate-50 sm:text-5xl md:text-6xl">
             <LetterReveal text="Get in " />
             <span className="instrument-serif">
               <GradientTypeReveal text="Touch" delay={0.2} speed={0.05} />
             </span>
           </h2>
 
-          <p className="mt-8 max-w-md text-lg leading-8 text-white/65">
-            Feel free to reach out for internships, collaborations, projects or
-            opportunities. I’d love to connect and create something meaningful!
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-400">
+            I’m open to internships, collaborations, creative opportunities, and
+            meaningful tech projects. Let’s build something impactful together.
           </p>
-
-          <div className="mt-10 space-y-5 text-base sm:text-lg">
-            <a
-              href="tel:+94716672616"
-              className="block text-white/80 transition duration-300 hover:text-[#C8A2C8]"
-            >
-              +94 71 667 2616
-            </a>
-
-            <a
-              href="mailto:pamiguru09@gmail.com"
-              className="block text-white/80 transition duration-300 hover:text-[#C8A2C8]"
-            >
-              pamiguru09@gmail.com
-            </a>
-
-            <a
-              href="https://github.com/pamina-guru"
-              target="_blank"
-              rel="noreferrer"
-              className="block text-white/80 transition duration-300 hover:text-[#C8A2C8]"
-            >
-              GitHub
-            </a>
-
-            <a
-              href="https://www.linkedin.com/in/pamina-guruparan"
-              target="_blank"
-              rel="noreferrer"
-              className="block text-white/80 transition duration-300 hover:text-[#C8A2C8]"
-            >
-              LinkedIn
-            </a>
-          </div>
         </div>
 
-        <form className="space-y-6 rounded-[2rem] border border-[#DA70D6]/20 bg-white/[0.04] p-6 shadow-[0_0_35px_rgba(112,25,61,0.12)] backdrop-blur-xl md:p-8">
-          <input
-            type="text"
-            placeholder="Name"
-            className="w-full rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4 text-white outline-none transition duration-300 placeholder:text-white/35 focus:border-[#DA70D6] focus:shadow-[0_0_0_3px_rgba(218,112,214,0.12)]"
-          />
+        <div className="grid gap-8 md:grid-cols-[0.95fr_1.05fr]">
+          <div className="section-card rounded-[2rem] p-8">
+            <p className="text-sm uppercase tracking-[0.25em] text-slate-400">
+              Contact Details
+            </p>
 
-          <input
-            type="email"
-            placeholder="Email"
-            className="w-full rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4 text-white outline-none transition duration-300 placeholder:text-white/35 focus:border-[#DA70D6] focus:shadow-[0_0_0_3px_rgba(218,112,214,0.12)]"
-          />
+            <div className="mt-8 space-y-5">
+              <a
+                href="mailto:pamiguru09@gmail.com"
+                className="block rounded-2xl border border-slate-700/40 bg-slate-900/20 px-5 py-4 text-slate-200 transition duration-300 hover:border-cyan-400/40 hover:text-cyan-300"
+              >
+                pamiguru09@gmail.com
+              </a>
 
-          <input
-            type="text"
-            placeholder="Subject"
-            className="w-full rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4 text-white outline-none transition duration-300 placeholder:text-white/35 focus:border-[#DA70D6] focus:shadow-[0_0_0_3px_rgba(218,112,214,0.12)]"
-          />
+              <a
+                href="tel:+94716672616"
+                className="block rounded-2xl border border-slate-700/40 bg-slate-900/20 px-5 py-4 text-slate-200 transition duration-300 hover:border-cyan-400/40 hover:text-cyan-300"
+              >
+                +94 71 667 2616
+              </a>
 
-          <textarea
-            rows="6"
-            placeholder="Message"
-            className="w-full resize-none rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4 text-white outline-none transition duration-300 placeholder:text-white/35 focus:border-[#DA70D6] focus:shadow-[0_0_0_3px_rgba(218,112,214,0.12)]"
-          ></textarea>
+              <a
+                href="https://github.com/pamina-guru"
+                target="_blank"
+                rel="noreferrer"
+                className="block rounded-2xl border border-slate-700/40 bg-slate-900/20 px-5 py-4 text-slate-200 transition duration-300 hover:border-cyan-400/40 hover:text-cyan-300"
+              >
+                GitHub
+              </a>
 
-          <div className="flex flex-wrap gap-4">
-            <button
-              type="submit"
-              className="group relative inline-flex items-center justify-center overflow-hidden rounded-2xl px-8 py-4 font-semibold text-white transition duration-300 hover:-translate-y-1"
-            >
-              <span className="absolute inset-0 bg-gradient-to-r from-[#70193D] via-[#DA70D6] to-[#C8A2C8] shadow-[0_0_25px_rgba(218,112,214,0.35),0_0_60px_rgba(200,162,200,0.18)] transition duration-300 group-hover:shadow-[0_0_35px_rgba(218,112,214,0.5),0_0_80px_rgba(200,162,200,0.28)]" />
-              <span className="absolute -left-16 top-0 h-full w-10 rotate-12 bg-white/20 blur-md transition-all duration-700 group-hover:left-[115%]" />
-              <span className="relative z-10">Send Message</span>
-            </button>
-
-            <a
-              href="/Pamina-Guruparan-CV.pdf"
-              download
-              className="inline-flex items-center justify-center rounded-2xl border border-[#DA70D6]/55 bg-black/30 px-8 py-4 font-semibold text-[#C8A2C8] transition duration-300 hover:-translate-y-1 hover:border-[#DA70D6] hover:text-white hover:shadow-[0_0_28px_rgba(112,25,61,0.28)]"
-            >
-              Download CV
-            </a>
+              <a
+                href="https://www.linkedin.com/in/pamina-guruparan"
+                target="_blank"
+                rel="noreferrer"
+                className="block rounded-2xl border border-slate-700/40 bg-slate-900/20 px-5 py-4 text-slate-200 transition duration-300 hover:border-cyan-400/40 hover:text-cyan-300"
+              >
+                LinkedIn
+              </a>
+            </div>
           </div>
-        </form>
+
+          <form className="section-card rounded-[2rem] p-8">
+            <div className="grid gap-5">
+              <input
+                type="text"
+                placeholder="Your name"
+                className="rounded-2xl border border-slate-700/40 bg-[#0f223d]/70 px-5 py-4 text-slate-100 outline-none transition duration-300 placeholder:text-slate-500 focus:border-cyan-400/50 focus:shadow-[0_0_0_3px_rgba(100,217,255,0.08)]"
+              />
+
+              <input
+                type="email"
+                placeholder="Your email"
+                className="rounded-2xl border border-slate-700/40 bg-[#0f223d]/70 px-5 py-4 text-slate-100 outline-none transition duration-300 placeholder:text-slate-500 focus:border-cyan-400/50 focus:shadow-[0_0_0_3px_rgba(100,217,255,0.08)]"
+              />
+
+              <input
+                type="text"
+                placeholder="Subject"
+                className="rounded-2xl border border-slate-700/40 bg-[#0f223d]/70 px-5 py-4 text-slate-100 outline-none transition duration-300 placeholder:text-slate-500 focus:border-cyan-400/50 focus:shadow-[0_0_0_3px_rgba(100,217,255,0.08)]"
+              />
+
+              <textarea
+                rows="6"
+                placeholder="Your message"
+                className="resize-none rounded-2xl border border-slate-700/40 bg-[#0f223d]/70 px-5 py-4 text-slate-100 outline-none transition duration-300 placeholder:text-slate-500 focus:border-cyan-400/50 focus:shadow-[0_0_0_3px_rgba(100,217,255,0.08)]"
+              />
+
+              <div className="flex flex-wrap gap-4 pt-2">
+                <motion.button
+                  whileHover={{ y: -3, scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  type="submit"
+                  className="rounded-2xl bg-gradient-to-r from-cyan-400 to-sky-500 px-8 py-4 font-semibold text-slate-950 shadow-[0_0_24px_rgba(100,217,255,0.18)] transition duration-300"
+                >
+                  Send Message
+                </motion.button>
+
+                <motion.a
+                  whileHover={{ y: -3, scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  href="/Pamina-Guruparan-CV.pdf"
+                  download
+                  className="rounded-2xl border border-cyan-400/30 bg-[#0f223d]/70 px-8 py-4 font-semibold text-cyan-300 transition duration-300 hover:border-cyan-300/50 hover:text-white"
+                >
+                  Download CV
+                </motion.a>
+              </div>
+            </div>
+          </form>
+        </div>
       </ScrollReveal>
     </section>
   );

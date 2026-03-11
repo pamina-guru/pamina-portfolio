@@ -16,13 +16,21 @@ import CursorGlow from "./components/CursorGlow";
 
 function App() {
   return (
-    <ReactLenis root options={{ lerp: 0.05, duration: 1.5, smoothTouch: true }}>
+    <ReactLenis
+      root
+      options={{
+        lerp: 0.08,
+        duration: 1.4,
+        smoothWheel: true,
+        smoothTouch: true,
+      }}
+    >
       <AnimatePresence mode="wait">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="relative min-h-screen overflow-x-hidden text-white"
+          className="relative min-h-screen overflow-x-hidden text-slate-100"
         >
           <DynamicBackground />
           <CursorGlow />

@@ -10,8 +10,8 @@ function ScrollReveal({ children, className = "", delay = 0, yOffset = 40 }) {
         type: "spring",
         damping: 20,
         stiffness: 80,
-        delay: delay,
-        duration: 0.8
+        delay,
+        duration: 0.8,
       }}
       className={className}
     >

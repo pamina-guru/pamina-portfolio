@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const navItems = [
   { id: "about", label: "About" },
   { id: "projects", label: "Projects" },
-  { id: "education", label: "Education" },
+  { id: "education", label: "Journey" },
   { id: "skills", label: "Skills" },
   { id: "contact", label: "Contact" },
 ];
@@ -45,15 +45,15 @@ function Navbar() {
   return (
     <nav className="fixed left-0 right-0 top-0 z-50 px-4 pt-4">
       <div
-        className={`mx-auto flex w-full max-w-7xl items-center justify-between rounded-[1.45rem] border border-white/10 px-6 py-4 backdrop-blur-2xl transition-all duration-300 ${
+        className={`nav-surface mx-auto flex w-full max-w-7xl items-center justify-between rounded-[1.45rem] px-6 py-4 transition-all duration-300 ${
           scrolled
-            ? "bg-black/45 shadow-[0_10px_40px_rgba(0,0,0,0.28)]"
-            : "bg-black/22 shadow-[0_0_24px_rgba(0,0,0,0.18)]"
+            ? "shadow-[0_10px_40px_rgba(2,8,23,0.35)]"
+            : "shadow-[0_0_22px_rgba(2,8,23,0.18)]"
         }`}
       >
         <a
           href="#home"
-          className="allura-font text-3xl tracking-wide text-white transition duration-300 hover:text-[#C8A2C8]"
+          className="allura-font text-3xl tracking-wide text-slate-50 transition duration-300 hover:text-cyan-300"
         >
           Pamina
         </a>
@@ -68,8 +68,8 @@ function Navbar() {
                 href={`#${item.id}`}
                 className={`rounded-full px-4 py-2 text-[15px] font-medium transition-all duration-300 ${
                   isActive
-                    ? "bg-white/10 text-white shadow-[0_0_20px_rgba(255,255,255,0.06)]"
-                    : "text-white/75 hover:bg-white/[0.05] hover:text-white"
+                    ? "bg-cyan-400/12 text-cyan-300 shadow-[0_0_18px_rgba(100,217,255,0.10)]"
+                    : "text-slate-300 hover:bg-slate-800/40 hover:text-white"
                 }`}
               >
                 {item.label}
@@ -81,7 +81,7 @@ function Navbar() {
         <a
           href="/Pamina-Guruparan-CV.pdf"
           download
-          className="rounded-full border border-[#DA70D6]/70 px-5 py-2 text-sm font-semibold text-[#C8A2C8] transition duration-300 hover:bg-[#70193D] hover:text-white hover:shadow-[0_0_18px_rgba(218,112,214,0.25)]"
+          className="rounded-full border border-cyan-400/30 px-5 py-2 text-sm font-semibold text-cyan-300 transition duration-300 hover:bg-cyan-400/10 hover:text-white"
         >
           Download CV
         </a>

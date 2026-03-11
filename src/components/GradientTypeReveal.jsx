@@ -24,11 +24,11 @@ function mixColor(a, b, t) {
 }
 
 function getGradientColors(length) {
-  const start = hexToRgb("#70193D");
-  const mid = hexToRgb("#DA70D6");
-  const end = hexToRgb("#C8A2C8");
+  const start = hexToRgb("#64d9ff");
+  const mid = hexToRgb("#7dd3fc");
+  const end = hexToRgb("#e2e8f0");
 
-  if (length <= 1) return ["#DA70D6"];
+  if (length <= 1) return ["#7dd3fc"];
 
   return Array.from({ length }, (_, i) => {
     const t = i / (length - 1);
@@ -53,8 +53,7 @@ function GradientTypeReveal({
   const [visible, setVisible] = useState(false);
 
   const colors = useMemo(() => {
-    const lettersOnly = text.split("");
-    return getGradientColors(lettersOnly.length);
+    return getGradientColors(text.split("").length);
   }, [text]);
 
   useEffect(() => {

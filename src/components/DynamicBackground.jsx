@@ -23,8 +23,8 @@ function DynamicBackground() {
   useEffect(() => {
     const animate = () => {
       setSmooth((prev) => ({
-        x: prev.x + (target.x - prev.x) * 0.045,
-        y: prev.y + (target.y - prev.y) * 0.045,
+        x: prev.x + (target.x - prev.x) * 0.04,
+        y: prev.y + (target.y - prev.y) * 0.04,
       }));
 
       frameRef.current = requestAnimationFrame(animate);
@@ -40,55 +40,44 @@ function DynamicBackground() {
   return (
     <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
       <div
-        className="blob-orbit absolute left-[-8rem] top-[-5rem]"
+        className="absolute left-[-10rem] top-[-6rem] h-[26rem] w-[26rem] rounded-full blur-[120px]"
         style={{
-          transform: `translate(${smooth.x * 120}px, ${smooth.y * 95}px)`,
-        }}
-      >
-        <div className="liquid liquid-one" />
-      </div>
-
-      <div
-        className="blob-orbit absolute right-[-7rem] top-[10%]"
-        style={{
-          transform: `translate(${smooth.x * -135}px, ${smooth.y * 90}px)`,
-        }}
-      >
-        <div className="liquid liquid-two" />
-      </div>
-
-      <div
-        className="blob-orbit absolute left-[22%] bottom-[-9rem]"
-        style={{
-          transform: `translate(${smooth.x * 90}px, ${smooth.y * -115}px)`,
-        }}
-      >
-        <div className="liquid liquid-three" />
-      </div>
-
-      <div
-        className="absolute h-[34rem] w-[34rem] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[150px]"
-        style={{
-          left: `${(smooth.x + 0.5) * 100}%`,
-          top: `${(smooth.y + 0.5) * 100}%`,
+          transform: `translate(${smooth.x * 110}px, ${smooth.y * 90}px)`,
           background:
-            "radial-gradient(circle, rgba(255,255,255,0.08) 0%, rgba(218,112,214,0.16) 22%, rgba(112,25,61,0.15) 44%, rgba(0,0,0,0) 74%)",
+            "radial-gradient(circle, rgba(100,217,255,0.10) 0%, rgba(15,34,61,0.08) 45%, transparent 75%)",
         }}
       />
 
       <div
-        className="absolute h-[26rem] w-[26rem] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[130px]"
+        className="absolute right-[-8rem] top-[10%] h-[24rem] w-[24rem] rounded-full blur-[130px]"
         style={{
-          left: `${(-smooth.x * 0.35 + 0.5) * 100}%`,
-          top: `${(-smooth.y * 0.35 + 0.5) * 100}%`,
+          transform: `translate(${smooth.x * -120}px, ${smooth.y * 85}px)`,
           background:
-            "radial-gradient(circle, rgba(255,255,255,0.04) 0%, rgba(200,162,200,0.11) 38%, rgba(112,25,61,0.08) 56%, rgba(0,0,0,0) 74%)",
+            "radial-gradient(circle, rgba(125,211,252,0.10) 0%, rgba(17,34,64,0.08) 48%, transparent 75%)",
         }}
       />
 
-      <div className="liquid-grid absolute inset-0" />
-      <div className="noise-layer absolute inset-0" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle,transparent_54%,rgba(0,0,0,0.22)_100%)]" />
+      <div
+        className="absolute bottom-[-10rem] left-[20%] h-[25rem] w-[25rem] rounded-full blur-[130px]"
+        style={{
+          transform: `translate(${smooth.x * 90}px, ${smooth.y * -110}px)`,
+          background:
+            "radial-gradient(circle, rgba(56,189,248,0.08) 0%, rgba(10,25,47,0.05) 45%, transparent 75%)",
+        }}
+      />
+
+      <div
+        className="absolute inset-0 opacity-40"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(148,163,184,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,0.03) 1px, transparent 1px)",
+          backgroundSize: "60px 60px",
+          maskImage:
+            "radial-gradient(circle at center, black 38%, transparent 90%)",
+        }}
+      />
+
+      <div className="absolute inset-0 bg-[radial-gradient(circle,transparent_55%,rgba(2,6,23,0.32)_100%)]" />
     </div>
   );
 }

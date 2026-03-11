@@ -1,4 +1,5 @@
-import LetterRevealText from "./LetterReveal";
+import LetterReveal from "./LetterReveal";
+import GradientTypeReveal from "./GradientTypeReveal";
 
 function SectionHeading({
   kicker,
@@ -10,26 +11,13 @@ function SectionHeading({
 
   return (
     <div className={`mb-20 ${alignClass}`}>
-      <p className="section-kicker mb-4 text-xs uppercase tracking-[0.35em] text-white/60">
-        {kicker}
-      </p>
+      <p className="section-kicker mb-4 text-xs">{kicker}</p>
 
-      <h2 className="text-4xl font-bold sm:text-5xl md:text-6xl section-heading-glow">
-        <LetterRevealText
-          as="span"
-          text={firstPart}
-          className="text-white"
-          delay={0.05}
-          speed={0.035}
-        />
-        <span> </span>
-        <LetterRevealText
-          as="span"
-          text={highlightPart}
-          className="instrument-serif bg-gradient-to-r from-[#70193D] via-[#DA70D6] to-[#C8A2C8] bg-clip-text text-transparent"
-          delay={0.25}
-          speed={0.04}
-        />
+      <h2 className="section-heading-glow text-4xl font-bold text-slate-50 sm:text-5xl md:text-6xl">
+        <LetterReveal text={`${firstPart} `} />
+        <span className="instrument-serif">
+          <GradientTypeReveal text={highlightPart} delay={0.2} speed={0.04} />
+        </span>
       </h2>
     </div>
   );

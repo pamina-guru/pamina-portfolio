@@ -14,149 +14,139 @@ function Projects() {
     {
       title: "UrbanRoots",
       description:
-        "A smart urban gardening mobile app that enables plant tracking, IoT integration, and AI-based recommendations for sustainable home gardening.",
+        "A smart urban gardening platform focused on sustainable living, plant tracking, AI-assisted recommendations, and user-centered product thinking.",
       tech: ["Flutter", "Next.js", "PostgreSQL", "TensorFlow"],
       image: urbanroots,
       github: "#",
+      live: "#",
     },
     {
       title: "Event Management Platform",
       description:
-        "A full-stack event platform where users can browse and register for events while administrators securely manage listings using REST APIs.",
+        "A full-stack event platform enabling users to browse and register for events while administrators manage listings securely through structured APIs.",
       tech: ["React", "Node.js", "PostgreSQL", "Prisma"],
       image: eventPlatform,
       github: "#",
+      live: "#",
     },
     {
       title: "SaaS Productivity Platform",
       description:
-        "A full-stack productivity system featuring authentication, task management, and dashboards for efficient workflow tracking.",
+        "A portfolio-grade productivity system with authentication, task workflows, dashboards, and clean modern UI for organized productivity management.",
       tech: ["React", "Node.js", "PostgreSQL", "Prisma"],
       image: saasProductivity,
       github: "#",
+      live: "#",
     },
     {
       title: "Movie Streaming Web App",
       description:
-        "A Netflix-style movie platform with authentication, dynamic browsing, and integrated trailer playback in a responsive UI.",
+        "A Netflix-style responsive movie platform with authentication, dynamic content browsing, and integrated trailer playback with polished interactions.",
       tech: ["React", "Firebase", "Tailwind", "REST API"],
       image: movieStreaming,
       github: "#",
+      live: "#",
     },
     {
       title: "Travel Destination Explorer",
       description:
-        "A responsive travel discovery app that allows users to explore destinations through dynamic search and detailed API-driven pages.",
+        "A travel discovery interface that allows users to explore destinations through responsive layouts, search functionality, and visually engaging UI.",
       tech: ["React", "Tailwind", "REST API"],
       image: travelExplorer,
       github: "#",
+      live: "#",
     },
     {
       title: "Traffic Data Analysis System",
       description:
-        "A Python application that analyzes traffic datasets and generates vehicle statistics with Tkinter-based histogram visualizations.",
+        "A Python-based data analysis application that processes traffic information and generates meaningful statistics with graphical visualization.",
       tech: ["Python", "Tkinter", "Data Analysis"],
       image: traffic,
       github: "#",
+      live: "#",
     },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 30 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: "spring",
-        stiffness: 80,
-        damping: 15,
-      },
-    },
-  };
-
   return (
-    <section
-      id="projects"
-      className="relative scroll-mt-32 px-6 py-24 text-white"
-    >
-      <ScrollReveal className="mx-auto max-w-6xl">
+    <section id="projects" className="section-shell scroll-mt-32 px-6 py-24">
+      <ScrollReveal className="mx-auto max-w-7xl">
         <div className="mb-20 text-center">
-          <p className="mb-4 text-xs uppercase tracking-[0.35em] text-white/60">
-            PORTFOLIO
-          </p>
+          <p className="section-kicker mb-4 text-xs">Featured Work</p>
 
-          <h2 className="section-heading-glow overflow-visible pb-5 text-4xl font-bold leading-[1.2] sm:text-5xl md:text-6xl">
-            <LetterReveal text="Featured " />
+          <h2 className="section-heading-glow overflow-visible pb-5 text-4xl font-bold leading-[1.15] text-slate-50 sm:text-5xl md:text-6xl">
+            <LetterReveal text="Selected " />
             <span className="instrument-serif">
-              <GradientTypeReveal text="Creations" delay={0.25} speed={0.045} />
+              <GradientTypeReveal text="Projects" delay={0.2} speed={0.045} />
             </span>
           </h2>
+
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-400">
+            A collection of projects that reflect my growth in product design,
+            front-end development, full-stack implementation, and visual
+            presentation.
+          </p>
         </div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
-        >
+        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
           {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              variants={cardVariants}
-              whileHover={{ y: -8, scale: 1.02 }}
-              className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl transition-colors duration-300 hover:border-[#DA70D6]/40 hover:bg-white/[0.06] hover:shadow-[0_0_40px_rgba(112,25,61,0.35)]"
-            >
-              <div className="overflow-hidden border-b border-white/10">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="h-60 w-full object-cover transition-transform duration-700 group-hover:scale-[1.08]"
-                />
-              </div>
-
-              <div className="p-6">
-                <h3 className="mb-3 text-xl font-semibold">{project.title}</h3>
-
-                <p className="mb-6 text-sm leading-7 text-white/65">
-                  {project.description}
-                </p>
-
-                <div className="mb-6 flex flex-wrap gap-2">
-                  {project.tech.map((tech, i) => (
-                    <span
-                      key={i}
-                      className="rounded-full border border-white/10 bg-white/[0.05] px-3 py-1 text-xs text-white/80 transition-colors group-hover:bg-white/[0.1]"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+            <ScrollReveal key={index} delay={index * 0.06} yOffset={40}>
+              <motion.article
+                whileHover={{ y: -8 }}
+                className="group section-card overflow-hidden rounded-[1.8rem]"
+              >
+                <div className="relative overflow-hidden border-b border-slate-700/40">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="h-60 w-full object-cover transition-transform duration-700 group-hover:scale-[1.07]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#07111f]/85 via-transparent to-transparent opacity-70" />
                 </div>
 
-                <motion.a
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  href={project.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-[#70193D] via-[#DA70D6] to-[#C8A2C8] px-6 py-2.5 text-sm font-semibold text-white transition-shadow duration-300 hover:shadow-[0_0_20px_rgba(218,112,214,0.4)]"
-                >
-                  View
-                </motion.a>
-              </div>
-            </motion.div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-slate-50">
+                    {project.title}
+                  </h3>
+
+                  <p className="mt-4 text-sm leading-7 text-slate-400">
+                    {project.description}
+                  </p>
+
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {project.tech.map((tech, i) => (
+                      <span
+                        key={i}
+                        className="rounded-full border border-slate-700/50 bg-[#0f223d]/80 px-3 py-1 text-xs text-slate-300"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="mt-6 flex flex-wrap gap-3">
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-5 py-2.5 text-sm font-semibold text-slate-950 transition duration-300 hover:shadow-[0_0_20px_rgba(100,217,255,0.18)]"
+                    >
+                      GitHub
+                    </a>
+
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center justify-center rounded-xl border border-cyan-400/25 bg-[#0f223d]/70 px-5 py-2.5 text-sm font-semibold text-cyan-300 transition duration-300 hover:border-cyan-300/45 hover:text-white"
+                    >
+                      Live Demo
+                    </a>
+                  </div>
+                </div>
+              </motion.article>
+            </ScrollReveal>
           ))}
-        </motion.div>
+        </div>
       </ScrollReveal>
     </section>
   );
