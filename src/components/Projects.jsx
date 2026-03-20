@@ -74,7 +74,7 @@ function Projects() {
           <p className="section-kicker mb-4 text-xs">Featured Work</p>
 
           <h2 className="section-heading-glow overflow-visible pb-5 text-4xl font-bold leading-[1.15] text-slate-50 sm:text-5xl md:text-6xl">
-            <LetterReveal text="Selected " />
+            <LetterReveal text="Featured " />
             <span className="instrument-serif">
               <GradientTypeReveal text="Projects" delay={0.2} speed={0.045} />
             </span>

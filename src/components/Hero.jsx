@@ -75,10 +75,11 @@ function Hero() {
             variants={itemVariants}
             className="mt-8 max-w-2xl text-lg leading-8 text-slate-300 md:text-[1.12rem]"
           >
-            I build elegant, user-focused digital experiences with a strong
-            interest in UI/UX design, front-end development, and modern product
-            design. I enjoy transforming ideas into polished, intuitive, and
-            recruiter-ready web experiences.
+            Computer Science undergraduate with a strong passion for{" "}
+            <span className="font-semibold text-cyan-300/90 tracking-[0.02em]">
+              full stack development
+            </span>
+            , building complete web applications from front end to back end.
           </motion.p>
 
           <motion.div
