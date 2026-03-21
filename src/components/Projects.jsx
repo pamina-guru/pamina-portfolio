@@ -57,7 +57,7 @@ function Projects() {
         "A Python-based data analysis application that processes traffic information and generates meaningful statistics with graphical visualization.",
       tech: ["Python", "Tkinter", "Data Analysis"],
       image: traffic,
-      github: "#",
+      github: "https://github.com/pamina-guru/traffic-analysis-system",
     },
   ];
 
