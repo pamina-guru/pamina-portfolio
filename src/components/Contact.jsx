@@ -125,7 +125,7 @@ function Contact() {
               </a>
 
               <a
-                href="tel:+94716672616"
+                href="tel:+94740960209"
                 className="block rounded-2xl border border-slate-700/40 bg-slate-900/20 px-5 py-4 text-slate-200 transition duration-300 hover:border-cyan-400/40 hover:text-cyan-300"
               >
                 +94 74 096 0209
