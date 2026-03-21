@@ -4,6 +4,7 @@ import saasProductivity from "../../images/saas-productivity.jpg";
 import movieStreaming from "../../images/movie-streaming.png";
 import travelExplorer from "../../images/travel-explorer.png";
 import traffic from "../../images/traffic.png";
+import climaCache from "../../images/climacache.png";
 import LetterReveal from "./LetterReveal";
 import GradientTypeReveal from "./GradientTypeReveal";
 import ScrollReveal from "./ScrollReveal";
@@ -23,7 +24,7 @@ function Projects() {
       description:
         "A full-stack weather application with real-time weather data, Redis caching, dynamic UI changes based on weather conditions, and a responsive modern interface.",
       tech: ["React", "Node.js", "Redis", "Weather API"],
-      image: saasProductivity,
+      image: climaCache,
       github: "https://github.com/pamina-guru/climacache",
     },
     {
