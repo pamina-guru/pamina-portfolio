@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import urbanroots from "../../images/UrbanRoots.png";
-import eventPlatform from "../../images/event-platform.jpg";
 import saasProductivity from "../../images/saas-productivity.jpg";
 import movieStreaming from "../../images/movie-streaming.png";
 import travelExplorer from "../../images/travel-explorer.png";
@@ -17,17 +16,15 @@ function Projects() {
         "A smart urban gardening platform focused on sustainable living, plant tracking, AI-assisted recommendations, and user-centered product thinking.",
       tech: ["Flutter", "Next.js", "PostgreSQL", "TensorFlow"],
       image: urbanroots,
-      github: "#",
-      live: "#",
+      github: "https://github.com/Nethmikalayasooriya/UrbanRoots-Project",
     },
     {
-      title: "Event Management Platform",
+      title: "ClimaCache",
       description:
-        "A full-stack event platform enabling users to browse and register for events while administrators manage listings securely through structured APIs.",
-      tech: ["React", "Node.js", "PostgreSQL", "Prisma"],
-      image: eventPlatform,
-      github: "#",
-      live: "#",
+        "A full-stack weather application with real-time weather data, Redis caching, dynamic UI changes based on weather conditions, and a responsive modern interface.",
+      tech: ["React", "Node.js", "Redis", "Weather API"],
+      image: saasProductivity,
+      github: "https://github.com/pamina-guru/climacache",
     },
     {
       title: "SaaS Productivity Platform",
@@ -35,8 +32,7 @@ function Projects() {
         "A portfolio-grade productivity system with authentication, task workflows, dashboards, and clean modern UI for organized productivity management.",
       tech: ["React", "Node.js", "PostgreSQL", "Prisma"],
       image: saasProductivity,
-      github: "#",
-      live: "#",
+      github: "https://github.com/pamina-guru/saas-productivity-platform-",
     },
     {
       title: "Movie Streaming Web App",
@@ -44,8 +40,7 @@ function Projects() {
         "A Netflix-style responsive movie platform with authentication, dynamic content browsing, and integrated trailer playback with polished interactions.",
       tech: ["React", "Firebase", "Tailwind", "REST API"],
       image: movieStreaming,
-      github: "#",
-      live: "#",
+      github: "https://github.com/pamina-guru/netflix-clone",
     },
     {
       title: "Travel Destination Explorer",
@@ -53,8 +48,7 @@ function Projects() {
         "A travel discovery interface that allows users to explore destinations through responsive layouts, search functionality, and visually engaging UI.",
       tech: ["React", "Tailwind", "REST API"],
       image: travelExplorer,
-      github: "#",
-      live: "#",
+      github: "https://github.com/pamina-guru/travel-destination-explorer",
     },
     {
       title: "Traffic Data Analysis System",
@@ -63,7 +57,6 @@ function Projects() {
       tech: ["Python", "Tkinter", "Data Analysis"],
       image: traffic,
       github: "#",
-      live: "#",
     },
   ];
 
@@ -131,15 +124,6 @@ function Projects() {
                       className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-5 py-2.5 text-sm font-semibold text-slate-950 transition duration-300 hover:shadow-[0_0_20px_rgba(100,217,255,0.18)]"
                     >
                       GitHub
-                    </a>
-
-                    <a
-                      href={project.live}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center justify-center rounded-xl border border-cyan-400/25 bg-[#0f223d]/70 px-5 py-2.5 text-sm font-semibold text-cyan-300 transition duration-300 hover:border-cyan-300/45 hover:text-white"
-                    >
-                      Live Demo
                     </a>
                   </div>
                 </div>
