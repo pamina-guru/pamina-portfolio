@@ -7,8 +7,8 @@ import ScrollReveal from "./ScrollReveal";
 
 function Hero() {
   const { scrollY } = useScroll();
-  const yOrb = useTransform(scrollY, [0, 500], [0, -60]);
-  const yContent = useTransform(scrollY, [0, 500], [0, 30]);
+  const yOrb = useTransform(scrollY, [0, 500], [0, -50]);
+  const yContent = useTransform(scrollY, [0, 500], [0, 25]);
   const opacityContent = useTransform(scrollY, [0, 320], [1, 0.2]);
 
   const stats = [
@@ -16,186 +16,115 @@ function Hero() {
     { value: "2+", label: "Years Coding" },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.12,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20, filter: "blur(6px)" },
-    show: {
-      opacity: 1,
-      y: 0,
-      filter: "blur(0px)",
-      transition: {
-        type: "spring",
-        stiffness: 90,
-        damping: 18,
-      },
-    },
-  };
-
   return (
     <section
       id="home"
-      className="relative isolate min-h-screen overflow-hidden px-6 pb-16 pt-36 md:px-8 md:pt-40"
+      className="relative isolate min-h-screen overflow-hidden px-6 pb-8 pt-28 md:px-8 md:pt-40"
     >
       <HeroParticles />
 
-      <div className="relative z-10 mx-auto grid min-h-[80vh] max-w-7xl items-center gap-14 lg:grid-cols-[1.1fr_0.9fr]">
-        {/* LEFT CONTENT */}
+      <div className="relative z-10 mx-auto grid min-h-[80vh] max-w-7xl items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+        {/* LEFT SIDE */}
         <motion.div
-          className="max-w-4xl"
           style={{ y: yContent, opacity: opacityContent }}
-          variants={containerVariants}
-          initial="hidden"
-          animate="show"
+          className="max-w-4xl"
         >
-          <motion.p
-            variants={itemVariants}
-            className="mb-5 text-sm uppercase tracking-[0.35em] text-cyan-300"
-          >
+          <p className="mb-5 text-xs uppercase tracking-[0.28em] text-cyan-300 sm:text-sm sm:tracking-[0.35em]">
             Computer Science Undergraduate
-          </motion.p>
+          </p>
 
-          <motion.h1
-            variants={itemVariants}
-            className="hero-name-glow signature-name text-[3.6rem] leading-[0.98] text-slate-50 md:text-[5rem] xl:text-[6rem]"
-          >
-            <LetterReveal text="Pamina Guruparan" />
-          </motion.h1>
+          {/* ✅ RESPONSIVE NAME */}
+          <h1 className="hero-name-glow signature-name text-slate-50 leading-[0.95] text-[3rem] sm:text-[4.5rem] md:text-[5rem] xl:text-[6rem]">
+            {/* Desktop → single line */}
+            <span className="hidden sm:block whitespace-nowrap">
+              <LetterReveal text="Pamina Guruparan" />
+            </span>
 
-          <motion.p
-            variants={itemVariants}
-            className="mt-8 max-w-2xl text-lg leading-8 text-slate-300 md:text-[1.12rem]"
-          >
+            {/* Mobile → two lines */}
+            <span className="block sm:hidden">
+              <span className="block whitespace-nowrap">
+                <LetterReveal text="Pamina" />
+              </span>
+              <span className="block whitespace-nowrap">
+                <LetterReveal text="Guruparan" delay={0.18} />
+              </span>
+            </span>
+          </h1>
+
+          <p className="mt-8 max-w-2xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">
             Computer Science undergraduate with a strong passion for{" "}
-            <span className="font-semibold text-cyan-300/90 tracking-[0.02em]">
+            <span className="font-semibold text-cyan-300">
               full stack development
             </span>
             , building complete web applications from front end to back end.
-          </motion.p>
+          </p>
 
           {/* BUTTONS */}
-          <motion.div
-            variants={itemVariants}
-            className="mt-10 flex flex-wrap gap-4"
-          >
-            <motion.a
-              whileHover={{ scale: 1.03, y: -3 }}
-              whileTap={{ scale: 0.98 }}
+          <div className="mt-10 flex flex-wrap gap-4">
+            <a
               href="#projects"
-              className="rounded-2xl bg-gradient-to-r from-cyan-400 to-sky-500 px-8 py-4 text-base font-semibold text-slate-950 shadow-[0_0_28px_rgba(100,217,255,0.18)]"
+              className="rounded-2xl bg-gradient-to-r from-cyan-400 to-sky-500 px-6 py-3 text-sm font-semibold text-slate-950 sm:px-8 sm:py-4"
             >
               View Projects
-            </motion.a>
+            </a>
 
-            <motion.a
-              whileHover={{ scale: 1.03, y: -3 }}
-              whileTap={{ scale: 0.98 }}
+            <a
               href="#contact"
-              className="rounded-2xl border border-slate-600/50 bg-[#0f223d]/70 px-8 py-4 text-base font-semibold text-slate-100 backdrop-blur-md transition duration-300 hover:border-cyan-400/35 hover:text-white"
+              className="rounded-2xl border border-slate-600/50 bg-[#0f223d]/70 px-6 py-3 text-sm font-semibold text-slate-100 sm:px-8 sm:py-4"
             >
               Contact Me
-            </motion.a>
+            </a>
 
-            <motion.a
-              whileHover={{ scale: 1.03, y: -3 }}
-              whileTap={{ scale: 0.98 }}
+            <a
               href="/Pamina-Guruparan-CV.pdf"
               download
-              className="rounded-2xl border border-cyan-400/25 bg-transparent px-8 py-4 text-base font-semibold text-cyan-300 transition duration-300 hover:border-cyan-300/45 hover:text-white"
+              className="rounded-2xl border border-cyan-400/25 px-6 py-3 text-sm font-semibold text-cyan-300 sm:px-8 sm:py-4"
             >
               Download CV
-            </motion.a>
-          </motion.div>
+            </a>
+          </div>
 
-          {/* SOCIAL ICONS */}
-          <motion.div
-            variants={itemVariants}
-            className="mt-10 flex items-center gap-4"
-          >
-            <motion.a
-              whileHover={{ y: -4, scale: 1.08 }}
-              href="https://github.com/pamina-guru"
-              target="_blank"
-              rel="noreferrer"
-              className="hero-social-circle"
-            >
+          {/* SOCIAL */}
+          <div className="mt-10 flex items-center gap-4">
+            <a href="https://github.com/pamina-guru" target="_blank">
               <FaGithub />
-            </motion.a>
-
-            <motion.a
-              whileHover={{ y: -4, scale: 1.08 }}
+            </a>
+            <a
               href="https://www.linkedin.com/in/pamina-guruparan"
               target="_blank"
-              rel="noreferrer"
-              className="hero-social-circle"
             >
               <FaLinkedinIn />
-            </motion.a>
-
-            <motion.a
-              whileHover={{ y: -4, scale: 1.08 }}
-              href="mailto:pamiguru09@gmail.com"
-              className="hero-social-circle"
-            >
+            </a>
+            <a href="mailto:pamiguru09@gmail.com">
               <HiOutlineMail />
-            </motion.a>
-          </motion.div>
+            </a>
+          </div>
 
           {/* STATS */}
-          <ScrollReveal delay={0.2} yOffset={35} className="mt-12">
-            <div className="grid gap-4 sm:grid-cols-2">
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.12 }}
-                  whileHover={{ y: -4 }}
-                  className="section-card rounded-[1.6rem] p-5"
-                >
+          <ScrollReveal delay={0.2}>
+            <div className="mt-12 grid gap-4 sm:grid-cols-2">
+              {stats.map((stat, i) => (
+                <div key={i} className="section-card rounded-[1.6rem] p-5">
                   <p className="text-3xl font-bold text-slate-50">
                     {stat.value}
                   </p>
-                  <p className="mt-2 text-sm uppercase tracking-[0.2em] text-slate-400">
-                    {stat.label}
-                  </p>
-                </motion.div>
+                  <p className="mt-2 text-sm text-slate-400">{stat.label}</p>
+                </div>
               ))}
             </div>
           </ScrollReveal>
         </motion.div>
 
-        {/* RIGHT SIDE PROFILE CIRCLE */}
+        {/* RIGHT SIDE IMAGE */}
         <motion.div
           style={{ y: yOrb }}
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.1, ease: "easeOut", delay: 0.3 }}
-          className="relative hidden items-center justify-center lg:flex"
+          className="flex items-center justify-center"
         >
-          {/* Glow */}
-          <div className="absolute h-[20rem] w-[20rem] rounded-full bg-[radial-gradient(circle,rgba(100,217,255,0.25)_0%,rgba(56,189,248,0.10)_45%,rgba(0,0,0,0)_75%)] blur-2xl" />
-
-          {/* Circle */}
-          <div className="relative flex h-[18rem] w-[18rem] items-center justify-center rounded-full border border-slate-700/40 bg-[#0f223d]/70 backdrop-blur-md shadow-[0_0_60px_rgba(0,0,0,0.4)]">
-            {/* Inner ring */}
-            <div className="absolute inset-[10px] rounded-full border border-cyan-400/20" />
-
-            {/* Profile image */}
+          <div className="relative mt-6 sm:mt-10 lg:mt-0 flex h-[11rem] w-[11rem] sm:h-[14rem] sm:w-[14rem] lg:h-[18rem] lg:w-[18rem] items-center justify-center rounded-full border border-slate-700/40 bg-[#0f223d]/70 backdrop-blur-md">
             <img
               src="/profile.jpeg"
               alt="Pamina Guruparan"
-              className="h-[13.5rem] w-[13.5rem] rounded-full object-cover border-4 border-cyan-400/30 shadow-[0_0_35px_rgba(100,217,255,0.35)] transition duration-500 hover:scale-105"
+              className="h-[8.5rem] w-[8.5rem] sm:h-[11rem] sm:w-[11rem] lg:h-[13.5rem] lg:w-[13.5rem] rounded-full object-cover border-4 border-cyan-400/30 shadow-[0_0_25px_rgba(100,217,255,0.25)]"
             />
           </div>
         </motion.div>
