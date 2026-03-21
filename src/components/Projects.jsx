@@ -17,7 +17,7 @@ function Projects() {
         "A smart urban gardening platform focused on sustainable living, plant tracking, AI-assisted recommendations, and user-centered product thinking.",
       tech: ["Flutter", "Next.js", "PostgreSQL", "TensorFlow"],
       image: urbanroots,
-      github: "https://github.com/Nethmikalayasooriya/UrbanRoots-Project",
+      github: "#",
     },
     {
       title: "ClimaCache",
