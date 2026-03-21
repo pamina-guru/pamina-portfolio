@@ -7,9 +7,9 @@ import ScrollReveal from "./ScrollReveal";
 
 function Hero() {
   const { scrollY } = useScroll();
-  const yOrb = useTransform(scrollY, [0, 500], [0, -70]);
-  const yContent = useTransform(scrollY, [0, 500], [0, 35]);
-  const opacityContent = useTransform(scrollY, [0, 320], [1, 0.15]);
+  const yOrb = useTransform(scrollY, [0, 500], [0, -60]);
+  const yContent = useTransform(scrollY, [0, 500], [0, 30]);
+  const opacityContent = useTransform(scrollY, [0, 320], [1, 0.2]);
 
   const stats = [
     { value: "6+", label: "Projects" },
@@ -49,6 +49,7 @@ function Hero() {
       <HeroParticles />
 
       <div className="relative z-10 mx-auto grid min-h-[80vh] max-w-7xl items-center gap-14 lg:grid-cols-[1.1fr_0.9fr]">
+        {/* LEFT CONTENT */}
         <motion.div
           className="max-w-4xl"
           style={{ y: yContent, opacity: opacityContent }}
@@ -81,6 +82,7 @@ function Hero() {
             , building complete web applications from front end to back end.
           </motion.p>
 
+          {/* BUTTONS */}
           <motion.div
             variants={itemVariants}
             className="mt-10 flex flex-wrap gap-4"
@@ -114,6 +116,7 @@ function Hero() {
             </motion.a>
           </motion.div>
 
+          {/* SOCIAL ICONS */}
           <motion.div
             variants={itemVariants}
             className="mt-10 flex items-center gap-4"
@@ -124,7 +127,6 @@ function Hero() {
               target="_blank"
               rel="noreferrer"
               className="hero-social-circle"
-              aria-label="GitHub"
             >
               <FaGithub />
             </motion.a>
@@ -135,7 +137,6 @@ function Hero() {
               target="_blank"
               rel="noreferrer"
               className="hero-social-circle"
-              aria-label="LinkedIn"
             >
               <FaLinkedinIn />
             </motion.a>
@@ -144,12 +145,12 @@ function Hero() {
               whileHover={{ y: -4, scale: 1.08 }}
               href="mailto:pamiguru09@gmail.com"
               className="hero-social-circle"
-              aria-label="Email"
             >
               <HiOutlineMail />
             </motion.a>
           </motion.div>
 
+          {/* STATS */}
           <ScrollReveal delay={0.2} yOffset={35} className="mt-12">
             <div className="grid gap-4 sm:grid-cols-2">
               {stats.map((stat, index) => (
@@ -157,8 +158,8 @@ function Hero() {
                   key={stat.label}
                   initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-80px" }}
-                  transition={{ delay: index * 0.12, duration: 0.55 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.12 }}
                   whileHover={{ y: -4 }}
                   className="section-card rounded-[1.6rem] p-5"
                 >
@@ -174,30 +175,28 @@ function Hero() {
           </ScrollReveal>
         </motion.div>
 
+        {/* RIGHT SIDE PROFILE CIRCLE */}
         <motion.div
           style={{ y: yOrb }}
-          initial={{ opacity: 0, scale: 0.84 }}
+          initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2, ease: "easeOut", delay: 0.35 }}
+          transition={{ duration: 1.1, ease: "easeOut", delay: 0.3 }}
           className="relative hidden items-center justify-center lg:flex"
         >
-          <div className="hero-orb absolute h-[28rem] w-[28rem] rounded-full bg-[radial-gradient(circle,rgba(100,217,255,0.18)_0%,rgba(56,189,248,0.10)_45%,rgba(0,0,0,0)_74%)] blur-3xl" />
+          {/* Glow */}
+          <div className="absolute h-[20rem] w-[20rem] rounded-full bg-[radial-gradient(circle,rgba(100,217,255,0.25)_0%,rgba(56,189,248,0.10)_45%,rgba(0,0,0,0)_75%)] blur-2xl" />
 
-          <div className="section-card relative h-[29rem] w-[29rem] rounded-full border border-slate-700/40">
-            <div className="absolute inset-[1.15rem] rounded-full border border-slate-600/30 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.08),rgba(255,255,255,0.01)_35%,transparent_55%)]" />
-            <div className="absolute inset-0 rounded-full shadow-[inset_0_0_100px_rgba(255,255,255,0.03)]" />
+          {/* Circle */}
+          <div className="relative flex h-[18rem] w-[18rem] items-center justify-center rounded-full border border-slate-700/40 bg-[#0f223d]/70 backdrop-blur-md shadow-[0_0_60px_rgba(0,0,0,0.4)]">
+            {/* Inner ring */}
+            <div className="absolute inset-[10px] rounded-full border border-cyan-400/20" />
 
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center">
-                <p className="text-7xl font-semibold tracking-wide text-slate-50">
-                  PG
-                </p>
-                <p className="mt-4 text-sm uppercase tracking-[0.35em] text-slate-400">
-                  Developer Portfolio
-                </p>
-                <div className="mx-auto mt-6 h-px w-24 bg-gradient-to-r from-transparent via-cyan-300/70 to-transparent" />
-              </div>
-            </div>
+            {/* Profile image */}
+            <img
+              src="/profile.jpeg"
+              alt="Pamina Guruparan"
+              className="h-[13.5rem] w-[13.5rem] rounded-full object-cover border-4 border-cyan-400/30 shadow-[0_0_35px_rgba(100,217,255,0.35)] transition duration-500 hover:scale-105"
+            />
           </div>
         </motion.div>
       </div>
