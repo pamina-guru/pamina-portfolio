@@ -128,7 +128,7 @@ function Contact() {
                 href="tel:+94716672616"
                 className="block rounded-2xl border border-slate-700/40 bg-slate-900/20 px-5 py-4 text-slate-200 transition duration-300 hover:border-cyan-400/40 hover:text-cyan-300"
               >
-                +94 71 667 2616
+                +94 74 096 0209
               </a>
 
               <a
