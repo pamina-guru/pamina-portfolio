@@ -37,9 +37,12 @@ function About() {
   ];
 
   return (
-    <section id="about" className="section-shell scroll-mt-32 px-6 py-24">
+    <section
+      id="about"
+      className="section-shell scroll-mt-32 px-6 py-16 md:py-20"
+    >
       <ScrollReveal className="mx-auto max-w-6xl">
-        <div className="mb-16 text-center">
+        <div className="mb-14 text-center md:mb-16">
           <p className="section-kicker mb-4 text-xs">About</p>
 
           <h2 className="section-heading-glow overflow-visible pb-5 text-4xl font-bold leading-[1.15] text-slate-50 sm:text-5xl md:text-6xl">
@@ -72,7 +75,7 @@ function About() {
             <p className="mt-6 text-base leading-8 text-slate-300 md:text-lg">
               I’m Pamina Guruparan, a Computer Science undergraduate with a
               strong interest in{" "}
-              <span className="font-semibold text-cyan-300/90 tracking-[0.02em]">
+              <span className="font-semibold tracking-[0.02em] text-cyan-300/90">
                 full stack development
               </span>
               , creating complete web applications from front end to back end. I
@@ -83,7 +86,7 @@ function About() {
             <p className="mt-5 text-base leading-8 text-slate-400 md:text-lg">
               I’m especially interested in working with{" "}
               <span className="font-medium text-slate-200">teams</span>,
-              contributing to meaningful products, learning from collaboration
+              contributing to meaningful products, learning from collaboration,
               and growing through real-world development experiences.
             </p>
 
