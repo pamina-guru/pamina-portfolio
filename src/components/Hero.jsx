@@ -14,7 +14,6 @@ function Hero() {
   const stats = [
     { value: "6+", label: "Projects" },
     { value: "2+", label: "Years Coding" },
-    { value: "3", label: "Tech Stacks" },
   ];
 
   const containerVariants = {
@@ -152,7 +151,7 @@ function Hero() {
           </motion.div>
 
           <ScrollReveal delay={0.2} yOffset={35} className="mt-12">
-            <div className="grid gap-4 sm:grid-cols-3">
+            <div className="grid gap-4 sm:grid-cols-2">
               {stats.map((stat, index) => (
                 <motion.div
                   key={stat.label}
