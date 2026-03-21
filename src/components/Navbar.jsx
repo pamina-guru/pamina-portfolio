@@ -79,7 +79,7 @@ function Navbar() {
         </div>
 
         <a
-          href="/Pamina-Guruparan-CV.pdf"
+          href="/Pamina Guruparan CV.pdf"
           download
           className="rounded-full border border-cyan-400/30 px-5 py-2 text-sm font-semibold text-cyan-300 transition duration-300 hover:bg-cyan-400/10 hover:text-white"
         >

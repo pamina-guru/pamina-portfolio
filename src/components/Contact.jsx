@@ -221,7 +221,7 @@ function Contact() {
                 <motion.a
                   whileHover={{ y: -3, scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  href="/Pamina-Guruparan-CV.pdf"
+                  href="/Pamina Guruparan CV.pdf"
                   download
                   className="rounded-2xl border border-cyan-400/30 bg-[#0f223d]/70 px-8 py-4 font-semibold text-cyan-300 transition duration-300 hover:border-cyan-300/50 hover:text-white"
                 >
