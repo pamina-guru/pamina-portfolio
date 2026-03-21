@@ -30,8 +30,8 @@ function About() {
   const strengths = [
     "Full Stack Development",
     "Team Collaboration",
-    "UI / UX Thinking",
-    "Responsive Design",
+    "Technical Writing",
+    "Documentation",
     "Problem Solving",
     "Modern Web Technologies",
   ];
