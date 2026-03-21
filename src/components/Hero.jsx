@@ -24,6 +24,7 @@ function Hero() {
       <HeroParticles />
 
       <div className="relative z-10 mx-auto grid min-h-[80vh] max-w-7xl items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+        {/* LEFT SIDE */}
         <motion.div
           style={{ y: yContent, opacity: opacityContent }}
           className="max-w-4xl"
@@ -32,6 +33,7 @@ function Hero() {
             Computer Science Undergraduate
           </p>
 
+          {/* NAME */}
           <h1 className="hero-name-glow signature-name text-[3rem] leading-[0.95] text-slate-50 sm:text-[4.5rem] md:text-[5rem] xl:text-[6rem]">
             <span className="hidden whitespace-nowrap sm:block">
               <LetterReveal text="Pamina Guruparan" />
@@ -55,17 +57,18 @@ function Hero() {
             , building complete web applications from front end to back end.
           </p>
 
+          {/* BUTTONS */}
           <div className="mt-10 flex flex-wrap gap-4">
             <a
               href="#projects"
-              className="rounded-2xl bg-gradient-to-r from-cyan-400 to-sky-500 px-6 py-3 text-sm font-semibold text-slate-950 shadow-[0_0_28px_rgba(100,217,255,0.18)] sm:px-8 sm:py-4"
+              className="rounded-2xl bg-gradient-to-r from-cyan-400 to-sky-500 px-6 py-3 text-sm font-semibold text-slate-950 sm:px-8 sm:py-4"
             >
               View Projects
             </a>
 
             <a
               href="#contact"
-              className="rounded-2xl border border-slate-600/50 bg-[#0f223d]/70 px-6 py-3 text-sm font-semibold text-slate-100 backdrop-blur-md transition duration-300 hover:border-cyan-400/35 hover:text-white sm:px-8 sm:py-4"
+              className="rounded-2xl border border-slate-600/50 bg-[#0f223d]/70 px-6 py-3 text-sm font-semibold text-slate-100 sm:px-8 sm:py-4"
             >
               Contact Me
             </a>
@@ -73,42 +76,29 @@ function Hero() {
             <a
               href="/Pamina-Guruparan-CV.pdf"
               download
-              className="rounded-2xl border border-cyan-400/25 px-6 py-3 text-sm font-semibold text-cyan-300 transition duration-300 hover:border-cyan-300/45 hover:text-white sm:px-8 sm:py-4"
+              className="rounded-2xl border border-cyan-400/25 px-6 py-3 text-sm font-semibold text-cyan-300 sm:px-8 sm:py-4"
             >
               Download CV
             </a>
           </div>
 
+          {/* SOCIAL */}
           <div className="mt-10 flex items-center gap-4">
-            <a
-              href="https://github.com/pamina-guru"
-              target="_blank"
-              rel="noreferrer"
-              className="hero-social-circle"
-              aria-label="GitHub"
-            >
+            <a href="https://github.com/pamina-guru" target="_blank">
               <FaGithub />
             </a>
-
             <a
               href="https://www.linkedin.com/in/pamina-guruparan"
               target="_blank"
-              rel="noreferrer"
-              className="hero-social-circle"
-              aria-label="LinkedIn"
             >
               <FaLinkedinIn />
             </a>
-
-            <a
-              href="mailto:pamiguru09@gmail.com"
-              className="hero-social-circle"
-              aria-label="Email"
-            >
+            <a href="mailto:pamiguru09@gmail.com">
               <HiOutlineMail />
             </a>
           </div>
 
+          {/* STATS */}
           <ScrollReveal delay={0.2}>
             <div className="mt-12 mb-10 grid gap-4 sm:grid-cols-2">
               {stats.map((stat, i) => (
@@ -123,15 +113,16 @@ function Hero() {
           </ScrollReveal>
         </motion.div>
 
+        {/* RIGHT SIDE IMAGE (SLIGHTLY BIGGER 🔥) */}
         <motion.div
           style={{ y: yOrb }}
           className="mt-6 flex items-center justify-center sm:mt-10 lg:mt-0"
         >
-          <div className="relative flex h-[11rem] w-[11rem] items-center justify-center rounded-full border border-slate-700/40 bg-[#0f223d]/70 backdrop-blur-md sm:h-[14rem] sm:w-[14rem] lg:h-[18rem] lg:w-[18rem]">
+          <div className="relative flex h-[12rem] w-[12rem] items-center justify-center rounded-full border border-slate-700/40 bg-[#0f223d]/70 backdrop-blur-md sm:h-[15rem] sm:w-[15rem] lg:h-[19rem] lg:w-[19rem]">
             <img
               src="/profile.jpeg"
               alt="Pamina Guruparan"
-              className="h-[8.5rem] w-[8.5rem] rounded-full border-4 border-cyan-400/30 object-cover shadow-[0_0_25px_rgba(100,217,255,0.25)] sm:h-[11rem] sm:w-[11rem] lg:h-[13.5rem] lg:w-[13.5rem]"
+              className="h-[9.5rem] w-[9.5rem] rounded-full object-cover border-4 border-cyan-400/30 shadow-[0_0_28px_rgba(100,217,255,0.28)] sm:h-[12rem] sm:w-[12rem] lg:h-[14.5rem] lg:w-[14.5rem]"
             />
           </div>
         </motion.div>
