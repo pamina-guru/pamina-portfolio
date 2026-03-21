@@ -10,6 +10,7 @@ import {
   FaGitAlt,
   FaGithub,
 } from "react-icons/fa";
+
 import {
   SiJavascript,
   SiTypescript,
@@ -24,6 +25,7 @@ import {
   SiFlutter,
   SiRedis,
   SiSupabase,
+  SiNestjs,
 } from "react-icons/si";
 
 import LetterReveal from "./LetterReveal";
@@ -50,6 +52,7 @@ function Skills() {
       items: [
         { name: "Node.js", icon: <FaNodeJs /> },
         { name: "Express.js", icon: <FaNodeJs /> },
+        { name: "Nest.js", icon: <SiNestjs /> },
         { name: "Firebase", icon: <SiFirebase /> },
         { name: "Supabase", icon: <SiSupabase /> },
         { name: "Redis", icon: <SiRedis /> },
