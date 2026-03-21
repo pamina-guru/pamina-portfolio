@@ -22,6 +22,8 @@ import {
   SiPostman,
   SiVercel,
   SiFlutter,
+  SiRedis,
+  SiSupabase,
 } from "react-icons/si";
 
 import LetterReveal from "./LetterReveal";
@@ -49,6 +51,8 @@ function Skills() {
         { name: "Node.js", icon: <FaNodeJs /> },
         { name: "Express.js", icon: <FaNodeJs /> },
         { name: "Firebase", icon: <SiFirebase /> },
+        { name: "Supabase", icon: <SiSupabase /> },
+        { name: "Redis", icon: <SiRedis /> },
         { name: "MySQL", icon: <SiMysql /> },
         { name: "PostgreSQL", icon: <SiPostgresql /> },
       ],
@@ -70,6 +74,25 @@ function Skills() {
         { name: "Postman", icon: <SiPostman /> },
         { name: "Vercel", icon: <SiVercel /> },
       ],
+    },
+  ];
+
+  const certifications = [
+    {
+      title: "Postman API Fundamentals Student Expert",
+      year: "2026",
+    },
+    {
+      title: "IEEEXtreme 19.0",
+      year: "2025",
+    },
+    {
+      title: "CodeRally 6.0",
+      year: "2025",
+    },
+    {
+      title: "IEEEXtreme 18.0",
+      year: "2024",
     },
   ];
 
@@ -134,22 +157,23 @@ function Skills() {
         <ScrollReveal delay={0.18} yOffset={35} className="mt-8">
           <div className="section-card rounded-[2rem] p-6 md:p-8">
             <h3 className="text-xl font-semibold text-slate-50">
-              Certifications & Highlights
+              Certifications
             </h3>
 
             <div className="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-              {[
-                "Postman Student Expert",
-                "Student Leadership Experience",
-                "UI/UX and Product Design Growth",
-                "Portfolio-Driven Full-Stack Projects",
-              ].map((item, index) => (
-                <div
+              {certifications.map((item, index) => (
+                <motion.div
                   key={index}
-                  className="rounded-2xl border border-slate-700/40 bg-[#0f223d]/70 p-4 text-sm leading-7 text-slate-300"
+                  whileHover={{ y: -4, scale: 1.02 }}
+                  className="rounded-2xl border border-slate-700/40 bg-[#0f223d]/70 p-5"
                 >
-                  {item}
-                </div>
+                  <p className="text-sm uppercase tracking-[0.22em] text-cyan-300">
+                    {item.year}
+                  </p>
+                  <h4 className="mt-3 text-base leading-7 font-medium text-slate-100">
+                    {item.title}
+                  </h4>
+                </motion.div>
               ))}
             </div>
           </div>
